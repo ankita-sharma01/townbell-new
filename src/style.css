@@ -347,6 +347,19 @@ button.hover-btn:hover::before {
   transform: rotate(-4deg);
 }
 
+
+
+/* For smooth scrolling performance */
+.scrolling-container {
+  overflow: hidden;
+  will-change: transform;
+}
+
+.scrolling-content {
+  display: flex;
+  will-change: transform;
+}
+
 .pros {
   padding-top: 60px;
 }

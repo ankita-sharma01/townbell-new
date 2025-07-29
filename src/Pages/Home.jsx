@@ -348,7 +348,34 @@ useEffect(() => {
 
 
   // grand vision-------------------------------------------------------
-   
+   // Add this inside your HomePage component, right after the useEffect hooks
+useEffect(() => {
+  // Setup for the Grand Vision auto-scrolling image strip
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    const container = document.querySelector(".scrolling-container");
+    const scrollContent = document.querySelector(".scrolling-content");
+    
+    // Calculate total width
+    const items = gsap.utils.toArray(".scrolling-item");
+    const itemWidth = items[0].offsetWidth;
+    const gap = 20; // Gap between items
+    const totalWidth = (itemWidth + gap) * items.length;
+    
+    // Duplicate content for seamless looping
+    scrollContent.innerHTML += scrollContent.innerHTML;
+    
+    // GSAP animation for continuous scrolling
+    gsap.to(scrollContent, {
+      x: -totalWidth,
+      duration: 40, // Adjust duration for speed
+      ease: "none",
+      repeat: -1, // Infinite loop
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+      }
+    });
+  }
+}, []);
 
 
 
@@ -761,40 +788,41 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* grand vision */}
-  <section className="bg-white w-full overflow-hidden">
-      {/* Top Text Section */}
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start text-left justify-between">
-        <div className="max-w-xl items-start text-left">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">A Grand Vision</h1>
-          <p className="text-lg leading-relaxed mb-2">
-            At Townbell, we are not just constructing buildings; we are crafting dreams into reality...we are not just constructing buildings; we are crafting dreams into reality...
-          </p>
-          <p className="text-lg leading-relaxed">
-            Investing in Townbell means you are choosing a future filled with luxury...Investing in Townbell means you are choosing a future filled with luxury...
-          </p>
-        </div>
-        <div className="mt-6 md:mt-0">
-          <img src={siteLogo} alt="Logo" className="w-40 mx-auto" />
-        </div>
-      </div>
+      {/* Grand Vision Section */}
+<section className="bg-white w-full overflow-hidden py-16">
+  {/* Top Text Section */}
+  <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start text-left justify-between mb-16">
+    <div className="max-w-xl items-start text-left">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">A Grand Vision</h1>
+      <p className="text-lg leading-relaxed mb-2">
+        At Townbell, we are not just constructing buildings; we are crafting dreams into reality...we are not just constructing buildings; we are crafting dreams into reality...
+      </p>
+      <p className="text-lg leading-relaxed">
+        Investing in Townbell means you are choosing a future filled with luxury...Investing in Townbell means you are choosing a future filled with luxury...
+      </p>
+    </div>
+    <div className="mt-6 md:mt-0">
+      <img src={siteLogo} alt="Logo" className="w-40 mx-auto" />
+    </div>
+  </div>
 
-      {/* Auto Scrolling Image Strip */}
-      <div className="relative w-full overflow-hidden whitespace-nowrap border-t border-gray-100">
-        <div className="animate-marquee inline-block">
-          {images.concat(images).map((src, idx) => (
+  {/* Auto Scrolling Image Strip */}
+  <div className="relative w-full overflow-hidden border-t border-gray-100 py-8">
+    <div className="scrolling-container overflow-hidden">
+      <div className="scrolling-content flex">
+        {images.map((src, idx) => (
+          <div key={idx} className="scrolling-item mx-4 flex-shrink-0">
             <img
-              key={idx}
               src={src}
               alt={`Gallery ${idx}`}
-              className="inline-block w-[500px] h-[300px] object-cover mx-2 rounded-[2px]"
+              className="w-[500px] h-[300px] object-cover rounded-[2px]"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-      
-    </section>
-      
+    </div>
+  </div>
+</section>
 
       {/* Testimonials Section */}
 
