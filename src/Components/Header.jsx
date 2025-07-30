@@ -88,7 +88,7 @@ export default Header;
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  z-index: 100;
+  z-index: 900;
   width: 100%;
   font-family: "Manrope", "Manrope Placeholder", sans-serif;
 `;

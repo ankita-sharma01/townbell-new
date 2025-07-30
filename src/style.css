@@ -105,7 +105,7 @@ header .links button:hover {
   transform-origin: center center;
   h1 {
     color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 8px rgb(0 0 0);
   }
 }
 @media (max-width: 767px) {
@@ -229,15 +229,21 @@ button.hover-btn:hover::before {
 .about-section {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
+  align-items:center;
+  gap: 50px;
 }
 .about-content {
   flex: 1;
 }
 .p-tag {
-  flex: 2;
+  flex: 1;
+  font-size: 16px;
+  margin:0;
+  text-align: left;
+  color:white;
+  font-weight:600;
 }
+
 @media (max-width: 767px) {
   .about-section {
     flex-wrap: wrap;
