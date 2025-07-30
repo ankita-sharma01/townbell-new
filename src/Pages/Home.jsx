@@ -12,7 +12,6 @@ import gardenView from "../Assets/TownLogo/about-top-img.png";
 import "../output.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
 import port1 from "../Assets/CLUB_INTERIOR/BANQUET.png";
 import port2 from "../Assets/CLUB_INTERIOR/GAMEROOM.png";
 import port3 from "../Assets/CLUB_INTERIOR/GYM.png";

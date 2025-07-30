@@ -46,22 +46,22 @@ const Header = () => {
         <FullscreenNav menuOpen={menuOpen}>
           <NavList>
             <NavItem>
-              <NavLink href="#home">HOME</NavLink>
+              <NavLink href="/">HOME</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#amenities">AMENITIES</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#site-plans">SITE PLANS</NavLink>
+              <NavLink href="/projects">SITE PLANS</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#about">ABOUT</NavLink>
+              <NavLink href="/about-townbell">ABOUT</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#blogs">BLOGS</NavLink>
+              <NavLink href="/blog">BLOGS</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#contact">CONTACT</NavLink>
+              <NavLink href="/contact-us">CONTACT</NavLink>
             </NavItem>
           </NavList>
           <Social>
