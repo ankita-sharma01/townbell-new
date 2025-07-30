@@ -24,6 +24,8 @@ import blog3 from "../Assets/exterior/TRILLIUM_12.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
+   const blogSectionRef = useRef(null);
+  const blogCardsRef = useRef([]);
   const [portfolioItems, setPortfolioItems] = useState([
     {
       title: "GreenWaves",
@@ -237,70 +239,85 @@ const HomePage = () => {
   };
 
   // Add this useEffect hook for the blog animation
-  useEffect(() => {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
-      const blogSection = document.querySelector(".blog-section");
-      const blogCards = gsap.utils.toArray(".blog-card");
+// Updated useEffect hook for blog section
+useEffect(() => {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    const blogSection = document.querySelector(".blog-section");
+    const blogCards = gsap.utils.toArray(".blog-card");
 
-      // Create a timeline for sequential animation
-      const blogTimeline = gsap.timeline({
+    // Create a timeline for sequential animation
+    const blogTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".blog-section",
+        start: "top top", // Start when top of section hits top of viewport
+        end: "+=3000", // Longer duration to allow sequential reveal
+        scrub: 1,
+        pin: true,
+        markers: false,
+        anticipatePin: 1,
+      },
+    });
+
+    // Position cards initially
+    gsap.set(blogCards, {
+      opacity: 0,
+      y: 100,
+      scale: 0.9
+    });
+
+    // Add card animations to timeline with sequential delays
+    blogCards.forEach((card, index) => {
+      blogTimeline.to(
+        card,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        index * 1 // 1 second delay between each card
+      );
+    });
+
+    // After all cards are visible, unpin and allow normal scrolling
+    blogTimeline.to(
+      {},
+      {
+        duration: 0.1,
+        onComplete: () => {
+          ScrollTrigger.getById("blog-pin")?.kill(); // Remove the pin
+        }
+      }
+    );
+  } else {
+    // Mobile animation (unchanged)
+    const blogCards = gsap.utils.toArray(".blog-card");
+    gsap.fromTo(
+      blogCards,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ".blog-section",
-          start: "top bottom", // Start when top of section hits bottom of viewport
-          end: "bottom top", // End when bottom of section hits top of viewport
-          scrub: 1,
-          markers: false,
+          start: "top 80%",
+          end: "top 30%",
+          scrub: true,
         },
-      });
-
-      // Add each card to the timeline with sequential positioning
-      blogCards.forEach((card, index) => {
-        // Position each card to start below the viewport
-        gsap.set(card, { y: window.innerHeight * (index + 1) });
-
-        // Add to timeline with sequential delays
-        blogTimeline.to(
-          card,
-          {
-            y: 0,
-            duration: 1,
-            ease: "power2.out",
-          },
-          index * 0.3
-        );
-      });
-
-      // After all cards are visible, move to bottom position
-      blogTimeline.to(
-        blogSection,
-        {
-          y: -window.innerHeight * 0.5,
-          duration: 1,
-        },
-        ">"
-      );
-    } else {
-      // Mobile animation (unchanged)
-      const blogCards = gsap.utils.toArray(".blog-card");
-      gsap.fromTo(
-        blogCards,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".blog-section",
-            start: "top 80%",
-            end: "top 30%",
-            scrub: true,
-          },
-        }
-      );
+      }
+    );
+  }
+}, []);
+  // Add cards to ref array
+  const addToRefs = (el) => {
+    if (el && !blogCardsRef.current.includes(el)) {
+      blogCardsRef.current.push(el);
     }
-  }, []);
+  };
 
   // grand vision-------------------------------------------------------
   useEffect(() => {
@@ -332,28 +349,26 @@ const HomePage = () => {
   }, []);
 
   // Add this blogData array
+ // Blog data
   const blogData = [
     {
       title: "The Future of Sustainable Architecture",
-      description:
-        "Exploring how green building practices are shaping the future of urban development.",
-      image: blog1,
-      date: "June 15, 2023",
+      description: "Exploring how green building practices are shaping the future of urban development.",
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      date: "June 15, 2023"
     },
     {
       title: "Maximizing Small Spaces",
-      description:
-        "Innovative design solutions for compact urban living without compromising on style.",
-      image: blog2,
-      date: "July 2, 2023",
+      description: "Innovative design solutions for compact urban living without compromising on style.",
+      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      date: "July 2, 2023"
     },
     {
       title: "Luxury Living Redefined",
-      description:
-        "How modern amenities are transforming the concept of luxury in residential projects.",
-      image: blog3,
-      date: "August 10, 2023",
-    },
+      description: "How modern amenities are transforming the concept of luxury in residential projects.",
+      image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      date: "August 10, 2023"
+    }
   ];
 
   // Create this testimonial data array
@@ -409,35 +424,35 @@ const HomePage = () => {
       </div>
 
       {/* Portfolio Section */}
-      <div
-        id="projects"
-        // className="portfolio-parent w-full lg:h-[200vh] relative bg-white z-9"
-        className="portfolio-parent w-full lg:h-[200vh] relative bg-white"
-      >
-        <div className="portfolio w-full flex flex-col items-center gap-[20px] md:gap-[40px] sticky top-[100px] left-0 overflow-hidden">
-          <div className="head w-[95%] lg:w-[1340px] flex flex-col md:flex-row items-center justify-center gap-[20px] lg:gap-10">
-            <h2 className="syne text-[35px] lg:text-[60px] font-semibold text-black leading-[1em] text-center md:text-start">
-              WELCOME TO OUR CLUBHOUSE
-            </h2>
+    {/* Portfolio Section */}
+<div
+  id="projects"
+  className="portfolio-parent w-full lg:h-[350vh] relative bg-white z-9"
+>
+  <div className="portfolio w-full flex flex-col items-center gap-[20px] md:gap-[40px] sticky top-[100px] left-0 overflow-hidden">
+    <div className="head w-[95%] lg:w-[1340px] flex flex-col md:flex-row items-center justify-center gap-[20px] lg:gap-10">
+      <h2 className="syne text-[35px] lg:text-[60px] font-semibold text-black leading-[1em] text-center md:text-start">
+        WELCOME TO OUR CLUBHOUSE
+      </h2>
+    </div>
+    <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[25px] lg:gap-[50px] lg:translate-x-[60vw]">
+      {portfolioItems.map((item, index) => (
+        <a href="#" key={index}>
+          <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
+            <img
+              className="w-full h-full object-cover object-center"
+              src={item.image}
+              alt={item.title}
+            />
           </div>
-          <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[25px] lg:gap-[10px] lg:translate-x-[60vw]">
-            {portfolioItems.map((item, index) => (
-              <a href="#" key={index}>
-                <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover object-center"
-                    src={item.image}
-                    alt={item.title}
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
 
       {/* about */}
-      <section className="w-full relative z-10">
+      <section className="w-full relative z-10 -mt-[100vh]">
         {/* Top Section with Content and Background */}
         <div
           className="bg-cover bg-center text-white py-[40px] px-8 pb-0 md:px-20"
@@ -583,7 +598,7 @@ const HomePage = () => {
       </div>
 
       {/* blogs */}
-      <div id="blogs" className="blog-section w-full py-[40px] bg-white">
+      {/* <div id="blogs" className="blog-section w-full py-[40px] bg-white">
         <div className="w-[95%] lg:w-[1240px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-[50px]">
             <h2 className="syne text-[25px] lg:text-[30px] font-semibold text-black leading-[1em]">
@@ -597,7 +612,7 @@ const HomePage = () => {
 
           <div className="relative min-h-[100vh]">
             {" "}
-            {/* Add this wrapper */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogData.map((blog, index) => (
                 <div key={index} className="blog-card">
@@ -642,7 +657,73 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div id="blogs" className="blog-section w-full py-[40px] bg-white">
+  <div className="w-[95%] lg:w-[1240px] mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center mb-[50px]">
+      <h2 className="syne text-[25px] lg:text-[30px] font-semibold text-black leading-[1em]">
+        Insights & Inspiration
+      </h2>
+      <button className="syne hover-btn text-[14px] lg:text-[16px] font-bold leading-[1em] text-white rounded-[50px] py-[18px] px-[30px] lg:py-[17px] lg:px-[33px] cursor-pointer flex items-center gap-[8px] relative mt-4 md:mt-0">
+        <div className="red-circle w-[12px] h-[12px] bg-[#FF000D] rounded-[4px]"></div>
+        <span>View All Articles</span>
+      </button>
+    </div>
+
+    <div className="relative min-h-[100vh]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogData.map((blog, index) => (
+          <div 
+            key={index} 
+            className="blog-card"
+            style={{
+              transform: "translateY(100px) scale(0.9)",
+              opacity: 0
+            }}
+          >
+            <div className="relative overflow-hidden rounded-[2px] mb-5 h-[500px]">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                <span className="inter text-white text-sm">
+                  {blog.date}
+                </span>
+              </div>
+            </div>
+            <h3 className="syne text-[20px] font-semibold mb-3 leading-tight">
+              {blog.title}
+            </h3>
+            <p className="inter text-gray-600 mb-4">{blog.description}</p>
+            <a
+              href="#"
+              className="inter text-[14px] font-medium text-black flex items-center gap-2 group"
+            >
+              Read More
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
