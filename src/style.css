@@ -1,7 +1,7 @@
 /* Inter */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
-/* Syne */
+/* Archivo  */
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 
 html {
@@ -24,7 +24,7 @@ html {
   }
 }
 
-.syne {
+.Archivo  {
   font-family: var(--primary-font);
 }
 .inter {

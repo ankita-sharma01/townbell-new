@@ -24,7 +24,7 @@ import blog3 from "../Assets/exterior/TRILLIUM_12.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
-   const blogSectionRef = useRef(null);
+  const blogSectionRef = useRef(null);
   const blogCardsRef = useRef([]);
   const [portfolioItems, setPortfolioItems] = useState([
     {
@@ -239,79 +239,79 @@ const HomePage = () => {
   };
 
   // Add this useEffect hook for the blog animation
-// Updated useEffect hook for blog section
-useEffect(() => {
-  if (window.matchMedia("(min-width: 1024px)").matches) {
-    const blogSection = document.querySelector(".blog-section");
-    const blogCards = gsap.utils.toArray(".blog-card");
 
-    // Create a timeline for sequential animation
-    const blogTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".blog-section",
-        start: "top top", // Start when top of section hits top of viewport
-        end: "+=3000", // Longer duration to allow sequential reveal
-        scrub: 1,
-        pin: true,
-        markers: false,
-        anticipatePin: 1,
-      },
-    });
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const blogSection = document.querySelector(".blog-section");
+      const blogCards = gsap.utils.toArray(".blog-card");
 
-    // Position cards initially
-    gsap.set(blogCards, {
-      opacity: 0,
-      y: 100,
-      scale: 0.9
-    });
-
-    // Add card animations to timeline with sequential delays
-    blogCards.forEach((card, index) => {
-      blogTimeline.to(
-        card,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power2.out",
-        },
-        index * 1 // 1 second delay between each card
-      );
-    });
-
-    // After all cards are visible, unpin and allow normal scrolling
-    blogTimeline.to(
-      {},
-      {
-        duration: 0.1,
-        onComplete: () => {
-          ScrollTrigger.getById("blog-pin")?.kill(); // Remove the pin
-        }
-      }
-    );
-  } else {
-    // Mobile animation (unchanged)
-    const blogCards = gsap.utils.toArray(".blog-card");
-    gsap.fromTo(
-      blogCards,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
+      // Create a timeline for sequential animation
+      const blogTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".blog-section",
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true,
+          start: "top top", // Start when top of section hits top of viewport
+          end: "+=2000", // Longer duration to allow sequential reveal
+          scrub: 1,
+          pin: true,
+          markers: false,
+          anticipatePin: 1,
         },
-      }
-    );
-  }
-}, []);
+      });
+
+      // Position cards initially
+      gsap.set(blogCards, {
+        opacity: 0,
+        y: 100,
+        scale: 0.9,
+      });
+
+      // Add card animations to timeline with sequential delays
+      blogCards.forEach((card, index) => {
+        blogTimeline.to(
+          card,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out",
+          },
+          index * 0.5 // 1 second delay between each card
+        );
+      });
+
+      // After all cards are visible, unpin and allow normal scrolling
+      blogTimeline.to(
+        {},
+        {
+          duration: 0.1,
+          onComplete: () => {
+            ScrollTrigger.getById("blog-pin")?.kill(); // Remove the pin
+          },
+        }
+      );
+    } else {
+      // Mobile animation (unchanged)
+      const blogCards = gsap.utils.toArray(".blog-card");
+      gsap.fromTo(
+        blogCards,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".blog-section",
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, []);
   // Add cards to ref array
   const addToRefs = (el) => {
     if (el && !blogCardsRef.current.includes(el)) {
@@ -349,26 +349,29 @@ useEffect(() => {
   }, []);
 
   // Add this blogData array
- // Blog data
+  // Blog data
   const blogData = [
     {
       title: "The Future of Sustainable Architecture",
-      description: "Exploring how green building practices are shaping the future of urban development.",
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
-      date: "June 15, 2023"
+      description:
+        "Exploring how green building practices are shaping the future of urban development.",
+      image: blog1,
+      date: "June 15, 2023",
     },
     {
       title: "Maximizing Small Spaces",
-      description: "Innovative design solutions for compact urban living without compromising on style.",
-      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
-      date: "July 2, 2023"
+      description:
+        "Innovative design solutions for compact urban living without compromising on style.",
+      image: blog2,
+      date: "July 2, 2023",
     },
     {
       title: "Luxury Living Redefined",
-      description: "How modern amenities are transforming the concept of luxury in residential projects.",
-      image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
-      date: "August 10, 2023"
-    }
+      description:
+        "How modern amenities are transforming the concept of luxury in residential projects.",
+      image: blog3,
+      date: "August 10, 2023",
+    },
   ];
 
   // Create this testimonial data array
@@ -400,7 +403,7 @@ useEffect(() => {
         id="top"
         className="hero w-full h-screen flex flex-col items-center justify-center perspective-midrange"
       >
-        <h1 className="syne text-[30px] lg:text-[50px] md:text-[40px] font-bold leading-[1em] text-white">
+        <h1 className="archivo  text-[30px] lg:text-[50px] md:text-[40px] font-bold leading-[1em] text-white">
           Welcome to the Townbell
         </h1>
       </div>
@@ -410,7 +413,7 @@ useEffect(() => {
         <div className="showreel w-full h-[90vh] md:h-screen lg:sticky top-0 flex flex-col items-center justify-center">
           <div className="top-blur absolute w-full h-[134px] pointer-events-none top-[-133px] left-p"></div>
 
-          <h1 className="syne text-[47px] lg:text-[150px] md:text-[100px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
+          <h1 className="archivo  text-[47px] lg:text-[150px] md:text-[100px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
             TOWNBELL
           </h1>
           <video
@@ -423,33 +426,33 @@ useEffect(() => {
         </div>
       </div>
 
+
       {/* Portfolio Section */}
-    {/* Portfolio Section */}
-<div
-  id="projects"
-  className="portfolio-parent w-full lg:h-[350vh] relative bg-white z-9"
->
-  <div className="portfolio w-full flex flex-col items-center gap-[20px] md:gap-[40px] sticky top-[100px] left-0 overflow-hidden">
-    <div className="head w-[95%] lg:w-[1340px] flex flex-col md:flex-row items-center justify-center gap-[20px] lg:gap-10">
-      <h2 className="syne text-[35px] lg:text-[60px] font-semibold text-black leading-[1em] text-center md:text-start">
-        WELCOME TO OUR CLUBHOUSE
-      </h2>
-    </div>
-    <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[25px] lg:gap-[50px] lg:translate-x-[60vw]">
-      {portfolioItems.map((item, index) => (
-        <a href="#" key={index}>
-          <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
-            <img
-              className="w-full h-full object-cover object-center"
-              src={item.image}
-              alt={item.title}
-            />
+      <div
+        id="projects"
+        className="portfolio-parent w-full lg:h-[350vh] relative bg-white z-9"
+      >
+        <div className="portfolio w-full flex flex-col items-center gap-[20px] md:gap-[40px] sticky top-[100px] left-0 overflow-hidden">
+          <div className="head w-[95%] lg:w-[1340px] flex flex-col md:flex-row items-center justify-center gap-[20px] lg:gap-10">
+            <h2 className="archivo  text-[35px] lg:text-[60px] font-semibold text-black leading-[1em] text-center md:text-start">
+              WELCOME TO OUR CLUBHOUSE
+            </h2>
           </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
+          <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[25px] lg:gap-[50px] lg:translate-x-[60vw]">
+            {portfolioItems.map((item, index) => (
+              <a href="#" key={index}>
+                <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover object-center"
+                    src={item.image}
+                    alt={item.title}
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* about */}
       <section className="w-full relative z-10 -mt-[100vh]">
@@ -460,9 +463,9 @@ useEffect(() => {
             backgroundImage: `url(${gardenView})`,
           }}
         >
-          <div className="about-section rounded-xl w-full">
+          <div className="about-section rounded-xl w-full pt-[20px]">
             <div className="about-content text-left">
-              <h2 className="text-3xl md:text-6xl font-bold mb-4 ">
+              <h2 className="text-[35px] lg:text-[60px] font-bold mb-4 ">
                 About Townbell
               </h2>
             </div>
@@ -528,45 +531,8 @@ useEffect(() => {
       </section>
 
       {/* Testimonials Section */}
-      {/* <div className="testimonials w-full flex flex-col items-center gap-[40px] md:gap-[40px] py-[60px] bg-gray-50">
-        <h2 className="syne text-[25px] lg:text-[30px] font-semibold text-black leading-[1em] text-center">
-          What Our Clients Say
-        </h2>
-
-        <div className="testimonial-slider w-[95%] lg:w-[700px]">
-          <Slider {...testimonialSettings}>
-            {testimonialData.map((testimonial, index) => (
-              <div key={index} className="p-4">
-                <div className="testimonial-card w-full h-[300px] md:h-[350px] p-[30px] rounded-[2px] bg-white shadow-lg flex flex-col justify-between">
-                  <p className="inter text-[15px] md:text-[17px] font-normal leading-[1.7em] italic text-gray-700">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="client-info flex items-center gap-[15px] mt-6">
-                    <div className="client-avatar w-[60px] h-[60px] rounded-full overflow-hidden border-2 border-[#FF000D]">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={testimonial.image}
-                        alt="Client"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="syne text-[18px] font-semibold">
-                        {testimonial.name}
-                      </h4>
-                      <p className="inter text-[13px] text-gray-500">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div> */}
-
-      <div className="bg-white text-black py-20 px-6 md:px-12">
-        <h2 className="text-4xl font-semibold text-center mb-4">
+      <div className="bg-white text-black py-20 px-[20px] md:px-12">
+        <h2 className="text-[35px] lg:text-[60px] font-semibold text-center mb-4">
           What people are saying
         </h2>
         <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
@@ -598,24 +564,30 @@ useEffect(() => {
       </div>
 
       {/* blogs */}
-      {/* <div id="blogs" className="blog-section w-full py-[40px] bg-white">
+
+      <div id="blogs" className="blog-section w-full py-[40px] bg-white">
         <div className="w-[95%] lg:w-[1240px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-[50px]">
-            <h2 className="syne text-[25px] lg:text-[30px] font-semibold text-black leading-[1em]">
+            <h2 className="archivo  text-[35px] lg:text-[60px] font-semibold text-black leading-[1em]">
               Insights & Inspiration
             </h2>
-            <button className="syne hover-btn text-[14px] lg:text-[16px] font-bold leading-[1em] text-white rounded-[50px] py-[18px] px-[30px] lg:py-[17px] lg:px-[33px] cursor-pointer flex items-center gap-[8px] relative mt-4 md:mt-0">
+            <button className="archivo  hover-btn text-[14px] lg:text-[16px] font-bold leading-[1em] text-white rounded-[50px] py-[18px] px-[30px] lg:py-[17px] lg:px-[33px] cursor-pointer flex items-center gap-[8px] relative mt-4 md:mt-0">
               <div className="red-circle w-[12px] h-[12px] bg-[#FF000D] rounded-[4px]"></div>
               <span>View All Articles</span>
             </button>
           </div>
 
           <div className="relative min-h-[100vh]">
-            {" "}
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogData.map((blog, index) => (
-                <div key={index} className="blog-card">
+                <div
+                  key={index}
+                  className="blog-card"
+                  style={{
+                    transform: "translateY(100px) scale(0.9)",
+                    opacity: 0,
+                  }}
+                >
                   <div className="relative overflow-hidden rounded-[2px] mb-5 h-[500px]">
                     <img
                       src={blog.image}
@@ -628,7 +600,7 @@ useEffect(() => {
                       </span>
                     </div>
                   </div>
-                  <h3 className="syne text-[20px] font-semibold mb-3 leading-tight">
+                  <h3 className="archivo  text-[20px] font-semibold mb-3 leading-tight">
                     {blog.title}
                   </h3>
                   <p className="inter text-gray-600 mb-4">{blog.description}</p>
@@ -657,73 +629,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-      </div> */}
-
-      <div id="blogs" className="blog-section w-full py-[40px] bg-white">
-  <div className="w-[95%] lg:w-[1240px] mx-auto">
-    <div className="flex flex-col md:flex-row justify-between items-center mb-[50px]">
-      <h2 className="syne text-[25px] lg:text-[30px] font-semibold text-black leading-[1em]">
-        Insights & Inspiration
-      </h2>
-      <button className="syne hover-btn text-[14px] lg:text-[16px] font-bold leading-[1em] text-white rounded-[50px] py-[18px] px-[30px] lg:py-[17px] lg:px-[33px] cursor-pointer flex items-center gap-[8px] relative mt-4 md:mt-0">
-        <div className="red-circle w-[12px] h-[12px] bg-[#FF000D] rounded-[4px]"></div>
-        <span>View All Articles</span>
-      </button>
-    </div>
-
-    <div className="relative min-h-[100vh]">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogData.map((blog, index) => (
-          <div 
-            key={index} 
-            className="blog-card"
-            style={{
-              transform: "translateY(100px) scale(0.9)",
-              opacity: 0
-            }}
-          >
-            <div className="relative overflow-hidden rounded-[2px] mb-5 h-[500px]">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
-                <span className="inter text-white text-sm">
-                  {blog.date}
-                </span>
-              </div>
-            </div>
-            <h3 className="syne text-[20px] font-semibold mb-3 leading-tight">
-              {blog.title}
-            </h3>
-            <p className="inter text-gray-600 mb-4">{blog.description}</p>
-            <a
-              href="#"
-              className="inter text-[14px] font-medium text-black flex items-center gap-2 group"
-            >
-              Read More
-              <svg
-                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </a>
-          </div>
-        ))}
       </div>
-    </div>
-  </div>
-</div>
     </div>
   );
 };
