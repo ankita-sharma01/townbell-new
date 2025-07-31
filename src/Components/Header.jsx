@@ -261,9 +261,6 @@ const NavItem = styled.li`
   font-weight: bold;
   transition: transform 0.3s ease;
   
-  &:hover {
-    transform: translateX(10px);
-  }
 `;
 
 const NavLink = styled.a`

@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import siteLogo from "../Assets/TownLogo/logo.png";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "../style.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,7 +14,6 @@ import port1 from "../Assets/CLUB_INTERIOR/BANQUET.png";
 import port2 from "../Assets/CLUB_INTERIOR/GAMEROOM.png";
 import port3 from "../Assets/CLUB_INTERIOR/GYM.png";
 import port4 from "../Assets/CLUB_INTERIOR/RECEPTION.png";
-import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import blog1 from "../Assets/exterior/TRILLIUM_10.png";
 import blog2 from "../Assets/exterior/TRILLIUM_2.png";
 import blog3 from "../Assets/exterior/TRILLIUM_12.png";
@@ -50,7 +47,7 @@ const HomePage = () => {
   ]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const images = [blog1, blog1, blog1, blog1, blog1, blog1, blog1, blog1];
+  const images = [blog1, blog2, blog3, port1, port2, port3, port4, townBuilding];
   const slideImages = [
     "./Assets/exterior/TRILLIUM_10.png",
     "./Assets/exterior/TRILLIUM_2.png",
@@ -260,9 +257,9 @@ const HomePage = () => {
 
       // Position cards initially
       gsap.set(blogCards, {
-        opacity: 0,
+        opacity: 1,
         y: 100,
-        scale: 0.9,
+        scale: 0,
       });
 
       // Add card animations to timeline with sequential delays
@@ -531,17 +528,18 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <div className="bg-white text-black py-20 px-[20px] md:px-12">
-        <h2 className="text-[35px] lg:text-[60px] font-semibold text-center mb-4">
+      <div className="bg-white text-black p-[20px] md:px-12">
+        <h2 className="text-[35px] lg:text-[60px] font-semibold text-center mb-2">
           What people are saying
         </h2>
-        <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 mb-[20px] max-w-3xl mx-auto">
           Chesscademy has inspired tens of thousands of people around the world
           to learn chess.
         </p>
 
         <div className="flex flex-col md:flex-row items-start justify-center gap-10">
           {testimonials.map((t, index) => (
+            <div className="flex flex-col items-center justify-center gap-10">
             <div
               key={index}
               className="relative bg-gray-100 p-6 rounded-xl max-w-sm mx-auto shadow-md"
@@ -557,6 +555,7 @@ const HomePage = () => {
                 <p className="font-semibold text-black">{t.name}</p>
                 <p className="text-sm text-gray-500 text-black">{t.title}</p>
               </div>
+            </div>
               <p className="font-semibold text-black">{t.name}</p>
             </div>
           ))}
