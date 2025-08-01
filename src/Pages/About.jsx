@@ -131,7 +131,7 @@ const About = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <section 
-        className="relative h-[120vh] flex items-center justify-center overflow-hidden"
+        className="relative w-full h-[120vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${living})`,
           backgroundSize: "cover",
@@ -140,19 +140,19 @@ const About = () => {
         }}
         ref={heroRef}
       >
-        <div className="h-screen flex flex-col justify-end text-center z-10 px-4">
+        <div className="h-screen flex flex-col justify-end item-center text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">About Us</h1>
           
           {/* Floating Element */}
           <div className="floating-element max-w-md">
-            <img className="w-60 h-auto mb-4" src={float} alt="amayra" />
+            <img className="w-60 mx-auto h-auto mb-4" src={float} alt="amayra" />
           </div>
         </div>
       </section>
 
       {/* Section 1: Shaping Tomorrow */}
       <section 
-        className="py-20 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-white"
+        className="py-10 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-white"
         ref={contentRef}
       >
         <div className="max-w-4xl mx-auto fade-up">
@@ -169,7 +169,7 @@ const About = () => {
       </section>
 
       {/* Section 2: Empowering Brands */}
-      <section className="py-20 px-4 md:px-8 bg-white">
+      <section className="py-10 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="fade-up">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
@@ -211,7 +211,7 @@ const About = () => {
 
       {/* Section 3: Meet the Team */}
       <section 
-        className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50"
+        className="py-10 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50"
         ref={teamRef}
       >
         <div className="max-w-6xl mx-auto">
@@ -232,7 +232,7 @@ const About = () => {
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-auto object-cover rounded-xl shadow-lg"
+                    className="w-full h-[90vh] object-cover rounded-xl shadow-lg"
                   />
                 </div>
                 
