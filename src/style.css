@@ -14,7 +14,7 @@ html {
   --primary-color: #000;
   --secondary-color: #fff;
   --primary-font: "Archivo", sans-serif;
-  --secondary-font: "Manrope", "Manrope Placeholder", sans-serif;
+  --secondary-font: "Archivo", sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -111,7 +111,7 @@ header .links button:hover {
 @media (max-width: 767px) {
   .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(../src/Assets/Media/Hero-bg.avif);
+      url(../src/Assets/new-baner-img.png);
     background-size: cover;
     background-position: center;
   }

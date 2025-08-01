@@ -7,13 +7,14 @@ import { RxCross1 } from "react-icons/rx";
 import { CgArrowLongRight } from "react-icons/cg";
 import { IoReorderTwoOutline } from "react-icons/io5";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 // First define all styled components before using them
 const HeaderWrapper = styled.header`
   position: fixed;
   z-index: 900;
   width: 100%;
-  font-family: "Manrope", "Manrope Placeholder", sans-serif;
+  font-family:"Archivo", sans-serif;
 `;
 
 const HeaderContainer = styled.div`
@@ -165,7 +166,7 @@ const FullscreenNav = styled.nav`
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+ const  navigate = useNavigate();
   const toggleMenu = () => {
     // Prevent scrolling when menu is open
     if (!menuOpen) {
@@ -198,10 +199,10 @@ const Header = () => {
         </Button>
 
         <Logo>
-          <img src={siteLogo} alt="Skytouch Logo" />
+          <img src={siteLogo} alt="Skytouch Logo" onClick={()=>navigate("/")} />
         </Logo>
 
-        <Button>
+        <Button onClick={()=>navigate("/contact-us")}>
           INQUIRE 
           <CgArrowLongRight />
         </Button>
@@ -213,16 +214,10 @@ const Header = () => {
             <NavLink href="/" onClick={toggleMenu}>HOME</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/amenities" onClick={toggleMenu}>AMENITIES</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/projects" onClick={toggleMenu}>SITE PLANS</NavLink>
+            <NavLink href="/amayra-project" onClick={toggleMenu}>AMAYRA TRILLIUM</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/about-townbell" onClick={toggleMenu}>ABOUT</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/blog" onClick={toggleMenu}>BLOGS</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/contact-us" onClick={toggleMenu}>CONTACT</NavLink>

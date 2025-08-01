@@ -5,10 +5,8 @@
 @layer theme, base, components, utilities;
 @layer base {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+    --font-sans:"Archivo", "Archivo Placeholder", sans-serif;
+    --font-mono:"Archivo", "Archivo Placeholder", sans-serif;
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-black: #000;
     --color-white: #fff;
@@ -51,7 +49,7 @@
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
-    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" );
+    font-family: var( --default-font-family, "Archivo", "Archivo Placeholder", sans-serif );
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var( --default-font-variation-settings, normal );
     -webkit-tap-highlight-color: transparent;
@@ -81,7 +79,7 @@
     font-weight: bolder;
   }
   code, kbd, samp, pre {
-    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace );
+    font-family: var( --default-mono-font-family, "Archivo", "Archivo Placeholder", sans-serif );
     font-feature-settings: var( --default-mono-font-feature-settings, normal );
     font-variation-settings: var( --default-mono-font-variation-settings, normal );
     font-size: 1em;

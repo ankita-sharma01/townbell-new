@@ -668,7 +668,7 @@ const SitePlans = () => {
     // Floating element animation
     gsap.to(".floating-element", {
       y: 20,
-      duration: 3,
+      duration: 4,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
@@ -679,12 +679,13 @@ const SitePlans = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+
   useEffect(() => {
     const sections = gsap.utils.toArray(".floor-section");
 
     sections.forEach((section, index) => {
       // Skip the last section
-      if (index < sections.length - 1) {
+      if (index < sections.length - 0 ) {
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
@@ -738,22 +739,22 @@ const SitePlans = () => {
     {
       title: " Typical Floor Plan: Tower A (3BHK)",
       image: floor1,
-      square: " 1819.45 SQ. FT.",
+      square: "1819.45 SQ. FT.",
     },
     {
       title: " Typical Floor Plan: Tower B (3BHK)",
       image: floor2,
-      square: "  1766.91 SQ. FT.",
+      square: "1766.91 SQ. FT.",
     },
     {
       title: " Typical Floor Plan: Tower C (3BHK)",
       image: floor3,
-      square: "  1821.60 SQ. FT.",
+      square: "1821.60 SQ. FT.",
     },
     {
       title: " Typical Floor Plan: Tower D (3BHK)",
       image: floor4,
-      square: " 2703.96 SQ. FT.",
+      square: "2703.96 SQ. FT.",
     },
   ];
 
@@ -799,7 +800,7 @@ const SitePlans = () => {
         <div className="text-left z-10 px-4 pb-[40px]">
           <div className="floating-element mx-auto bg-opacity-20 backdrop-blur-smp-6 max-w-md">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Site Plans
+              Amayra Trillium
             </h1>
           </div>
         </div>
@@ -961,77 +962,32 @@ const SitePlans = () => {
       </div>
 
       {/* floor section - No animations */}
-      <div className="p-[20px]">
-        <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 m-0 pb-[20px]">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              Togetherness. Enrichment. Rejoice.
-              <br />
-              Our Core Values.
-            </h2>
-          </div>
-          <div className="text-gray-800 text-sm md:text-base leading-relaxed">
-            We make even the wildest architectural dreams into dramatic yet
-            feasible finished products anyone would be proud of.
-          </div>
-        </div>
-        {floors.map((val) => (
-          <section className="flex flex-col md:flex-row items-center justify-between p-6 bg-white border border-gray-300">
-            <div className="w-full md:w-1/2">
-              <img
-                src={val.image}
-                alt="Family dining together"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
-              <h2 className="text-teal-800 text-2xl font-bold mb-4">
-                {val.title}
-              </h2>
-              <p className="text-gray-600">{val.square}</p>
-            </div>
-          </section>
-        ))}
-      </div>
-
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-20">
-            <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-4">
-              Emerald Heights Residences
-            </h1>
-            <p className="text-xl text-teal-700 max-w-3xl mx-auto">
-              Experience luxury living with our thoughtfully designed floor
-              plans
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-800 mb-6 text-center">
-              Togetherness. Enrichment. Rejoice. Our Core Values.
+            <h2 className="text-4xl md:text-5xl font-bold text-teal-900 mb-4">
+               Togetherness. Enrichment. Rejoice. Our Core Values.
             </h2>
-            <p className="text-gray-600 text-center text-lg">
-              We make even the wildest architectural dreams into dramatic yet
+            <p className="text-xl text-teal-700 max-w-3xl mx-auto">
+                We make even the wildest architectural dreams into dramatic yet
               feasible finished products anyone would be proud of.
             </p>
           </div>
-
           <div ref={containerRef} className="space-y-6 md:space-y-10">
             {floors.map((floor, index) => (
               <div
                 key={index}
                 className="floor-section bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row"
               >
-                <div className="md:w-1/2 bg-gradient-to-br from-teal-50 to-cyan-50 p-6 flex items-center justify-center">
+                <div className="md:w-1/2 p-4 flex items-center justify-center">
                   <div className="relative">
                     <img
                       src={floor.image}
                       alt="Family dining together"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[100vh] object-contain"
                     />
                   </div>
                 </div>
-
                 <div className="md:w-1/2 p-8 flex flex-col justify-center">
                   <h3 className="text-2xl font-bold text-teal-800 mb-4">
                     {floor.title}
@@ -1045,12 +1001,7 @@ const SitePlans = () => {
             ))}
           </div>
 
-          <div className="mt-20 text-center">
-            <p className="text-gray-500 italic">
-              Scroll to view each floor plan. Each one will pin to the top as
-              you scroll through them.
-            </p>
-          </div>
+          
         </div>
 
         

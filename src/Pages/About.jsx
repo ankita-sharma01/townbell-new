@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import float from "../Assets/amyra/float-logo.png";
+import living from "../Assets/amyra/living-1.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,21 +131,21 @@ const About = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <section 
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-[120vh] flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${living})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
+          overflow:"hidden"
         }}
         ref={heroRef}
       >
-        <div className="text-center z-10 px-4">
+        <div className="h-screen flex flex-col justify-end text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">About Us</h1>
           
           {/* Floating Element */}
-          <div className="floating-element mx-auto bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 max-w-md border border-white border-opacity-30">
-            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4" />
-            <p className="text-white text-lg">Building the future since 2010</p>
+          <div className="floating-element max-w-md">
+            <img className="w-60 h-auto mb-4" src={float} alt="amayra" />
           </div>
         </div>
       </section>

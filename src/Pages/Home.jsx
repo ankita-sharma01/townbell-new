@@ -400,7 +400,7 @@ const HomePage = () => {
         id="top"
         className="hero w-full h-screen flex flex-col items-center justify-center perspective-midrange"
       >
-        <h1 className="archivo  text-[30px] lg:text-[50px] md:text-[40px] font-bold leading-[1em] text-white">
+        <h1 className="archivo  text-[30px] lg:text-[70px] md:text-[50px] font-bold leading-[1em] text-white">
           Welcome to the Townbell
         </h1>
       </div>
@@ -410,8 +410,8 @@ const HomePage = () => {
         <div className="showreel w-full h-[90vh] md:h-screen lg:sticky top-0 flex flex-col items-center justify-center">
           <div className="top-blur absolute w-full h-[134px] pointer-events-none top-[-133px] left-p"></div>
 
-          <h1 className="archivo  text-[47px] lg:text-[150px] md:text-[100px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
-            TOWNBELL
+          <h1 className="archivo  text-[44px] lg:text-[140px] md:text-[90px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
+            AMAYRA TRILLIUM
           </h1>
           <video
             autoPlay
@@ -431,7 +431,7 @@ const HomePage = () => {
       >
         <div className="portfolio w-full flex flex-col items-center gap-[20px] md:gap-[40px] sticky top-[100px] left-0 overflow-hidden">
           <div className="head w-[95%] lg:w-[1340px] flex flex-col md:flex-row items-center justify-center gap-[20px] lg:gap-10">
-            <h2 className="archivo  text-[35px] lg:text-[60px] font-semibold text-black leading-[1em] text-center md:text-start">
+            <h2 className="archivo  text-[35px] lg:text-[60px] font-semibold text-black-700 leading-[1em] text-center md:text-start">
               WELCOME TO OUR CLUBHOUSE
             </h2>
           </div>
