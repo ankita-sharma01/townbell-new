@@ -19,11 +19,17 @@ import joy3 from "../Assets/fla-6/fla-3.jpg";
 import joy4 from "../Assets/fla-6/fla-4.jpg";
 import joy5 from "../Assets/fla-6/fla-5.jpg";
 import joy6 from "../Assets/fla-6/fla-6.jpg";
+import img1 from "../Assets/fla-6/fla-6.jpg";
+import img2 from "../Assets/fla-6/fla-6.jpg";
+import img3 from "../Assets/fla-6/fla-6.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const blogCardsRef = useRef([]);
+   const textRef = useRef(null);
+  const boxesRef = useRef(null);
+  const imageScrollRef = useRef(null);
   const [portfolioItems, setPortfolioItems] = useState([
     {
       title: "GreenWaves",
@@ -55,6 +61,12 @@ const HomePage = () => {
     "./Assets/exterior/TRILLIUM_12.png",
     // Add more images as needed
   ];
+  const boxes =[
+              { title: "Confidence in quality", icon: "🏗️" },
+              { title: "Clarity in communication", icon: "🗣️" },
+              { title: "Commitment to timelines", icon: "⏰" },
+              { title: "Comfort in living", icon: "🏡" },
+            ]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -198,6 +210,38 @@ const HomePage = () => {
     }
   }, []);
 
+
+   // Scroll & entrance animations
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: "top 80%",
+      },
+    });
+
+    gsap.from(boxesRef.current.children, {
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: boxesRef.current,
+        start: "top 85%",
+      },
+    });
+
+    // Infinite image scroll
+    const scrollTimeline = gsap.timeline({ repeat: -1 });
+    scrollTimeline.to(imageScrollRef.current, {
+      x: "-50%",
+      ease: "linear",
+      duration: 20,
+    });
+  }, []);
   return (
     <div className="home-page bg-black">
       <div className="main-home-section relative">
@@ -338,7 +382,7 @@ const HomePage = () => {
       {/* Grand Vision Section */}
       <section className="bg-white w-full overflow-hidden py-16 pb-[20px]">
         {/* Auto Scrolling Image Strip */}
-        <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[25px] lg:gap-[50px] lg:translate-x-[60vw]">
+        <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
           {portfolioItems.map((item, index) => (
             <a href="#" key={index}>
               <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
@@ -354,7 +398,7 @@ const HomePage = () => {
       </section>
 
       {/* build trust */}
-      <section className="trust p-[40px] flex justify-center item-center">
+      {/* <section className="trust p-[40px] flex justify-center item-center">
         <div className="trust-content relative text-left text-white flex flec-col">
           <h2 className="text-[35px] lg:text-[62px] font-bold">
             Built On Trust,Backed
@@ -367,6 +411,63 @@ const HomePage = () => {
         </div>
 
         <div>sgdfg</div>
+      </section> */}
+
+
+          {/* Top Info Section */}
+      <section className="py-20 px-4 md:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+          {/* Text Left */}
+          <div className="flex-1 space-y-4" ref={textRef}>
+            <h2 className="text-3xl md:text-4xl text-white font-bold leading-tight">
+              Built on Trust. <br /> Backed by Experience.
+            </h2>
+            <p className="text-gray-300">
+              Whether you're a first-time homebuyer or an investor, choosing Town Bell means choosing:
+            </p>
+          </div>
+
+          {/* 4 Feature Boxes */}
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6" ref={boxesRef}>
+            {boxes.map((item, idx) => (
+              <div
+                key={idx}
+                className="border border-gray-600 p-4 rounded-md hover:border-white transition duration-300"
+              >
+                <div className="text-2xl mb-2">{item.icon}</div>
+                <h3 className="font-semibold text-lg">{item.title}</h3>
+                <p className="text-sm text-gray-400 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Exterior Image Section */}
+      <section className="bg-white text-black py-20 px-4 md:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+          {/* Text */}
+          <div className="flex-1 space-y-4">
+            <h2 className="text-3xl font-bold">Exterior <br /> Amayra Trillium</h2>
+            <p className="text-gray-700">
+              Welcome to our world of creativity, where every project starts with a dream and ends with a space that feels like home.
+            </p>
+          </div>
+
+          {/* Image slider - infinite scroll */}
+          <div className="flex-1 overflow-hidden">
+            <div className="flex w-[200%] gap-4" ref={imageScrollRef}>
+              {[img1, img2, img3, img1, img2, img3].map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`exterior-${idx}`}
+                  className="w-1/3 object-cover rounded-md shadow-lg"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
