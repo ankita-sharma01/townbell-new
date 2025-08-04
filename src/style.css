@@ -1,8 +1,8 @@
 /* Inter */
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 /* Archivo  */
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -13,8 +13,8 @@ html {
   --full-width: 100%;
   --primary-color: #000;
   --secondary-color: #fff;
-  --primary-font: "Archivo", sans-serif;
-  --secondary-font: "Archivo", sans-serif;
+  --primary-font: "Plus Jakarta Sans", sans-serif;
+  --secondary-font: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -24,7 +24,7 @@ html {
   }
 }
 
-.Archivo  {
+.Archivo {
   font-family: var(--primary-font);
 }
 .inter {
@@ -44,7 +44,7 @@ header li {
   position: relative;
 }
 header li a {
-  color: --primary-colo;
+  color: var(--primary-color);
   transition: all ease 0.3s;
 }
 header li::before {
@@ -97,24 +97,35 @@ header .links button:hover {
 }
 
 .hero {
-  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../Assets/Media/Hero-bg.avif); */
-  background: url(../src/Assets/new-baner-img.png);
+  background: #000 url(../src/Assets/banner-img.png);
   background-size: 100%;
   position: relative;
+  top: 0px;
   z-index: 1;
-  transform-origin: center center;
-  h1 {
+  background-position: center;
+
+}
+.main-home-section{
+  margin-top:-112px;
+}
+
+.hero h1 {
     color: white;
-    text-shadow: 2px 2px 8px rgb(0 0 0);
-  }
+    background: url(../src/Assets/banner-title-bg.png);
+    background-size: cover;
+    transform-origin: center center;
+    text-align: center;
+    height: 203px;
+    align-items: center;
+    display: flex;
 }
 @media (max-width: 767px) {
   .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(../src/Assets/new-baner-img.png);
+    background: #000 url(../src/Assets/banner-img.png);
     background-size: cover;
     background-position: center;
   }
+  
 }
 button.hover-btn {
   backdrop-filter: blur(15px);
@@ -183,16 +194,15 @@ button.hover-btn:hover::before {
     transform: scale(1);
   }
 }
+
 .parent {
   z-index: 29999; /* Appears above hero */
 }
 .showreel {
   position: relative;
-  z-index: 29999; /* Appears above hero */
+  z-index: 999; /* Appears above hero */
 }
-.showreel .top-blur {
-  /* background: linear-gradient(180deg,rgba(13,13,13,0) 26.775956284153008%,rgb(13,13,13) 100%); */
-}
+
 .showreel h1 {
   background-image: linear-gradient(
     132deg,
@@ -229,7 +239,7 @@ button.hover-btn:hover::before {
 .about-section {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   gap: 50px;
 }
 .about-content {
@@ -238,10 +248,10 @@ button.hover-btn:hover::before {
 .p-tag {
   flex: 1;
   font-size: 16px;
-  margin:0;
+  margin: 0;
   text-align: left;
-  color:white;
-  font-weight:600;
+  color: white;
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
@@ -352,8 +362,6 @@ button.hover-btn:hover::before {
   right: 275px;
   transform: rotate(-4deg);
 }
-
-
 
 /* For smooth scrolling performance */
 .scrolling-container {
@@ -739,8 +747,8 @@ button.hover-btn:hover::before {
   border-radius: 40px;
 }
 
-.footer .footer-inner .footer-top button{
-   gap: 350px;
+.footer .footer-inner .footer-top button {
+  gap: 350px;
   background: radial-gradient(
     133% 150% at 3.7% 0%,
     rgb(111, 21, 57),
@@ -764,7 +772,7 @@ button.hover-btn:hover::before {
   }
 }
 .footer .footer-inner .footer-top button span.btn-icon {
-   transform: rotate(45deg);
+  transform: rotate(45deg);
   background: rgba(255, 255, 255, 0.15);
   height: 74px;
   width: 74px;
@@ -1083,22 +1091,3 @@ a#scroll-btn:hover::before {
     height: 85vh !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

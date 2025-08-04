@@ -4,17 +4,17 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import siteLogo from "../Assets/TownLogo/logo.png";
 import { RxCross1 } from "react-icons/rx";
-import { CgArrowLongRight } from "react-icons/cg";
 import { IoReorderTwoOutline } from "react-icons/io5";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { GoArrowUpRight } from "react-icons/go";
+import { IoIosMenu } from "react-icons/io";
 
 // First define all styled components before using them
 const HeaderWrapper = styled.header`
-  position: fixed;
-  z-index: 900;
+  z-index: 99999;
   width: 100%;
-  font-family:"Archivo", sans-serif;
+  font-family:"Plus Jakarta Sans", sans-serif;
 `;
 
 const HeaderContainer = styled.div`
@@ -25,14 +25,14 @@ const HeaderContainer = styled.div`
   background: transparent;
   color: white;
   position: relative;
-  z-index: 999;
+  z-index: 99999;
 `;
 
 const Button = styled.button`
   display: flex;
   align-items: center;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 0.5rem 1rem;
   background: none;
   color: white;
@@ -46,7 +46,7 @@ const Button = styled.button`
     color: black;
   }
   svg {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 300;
   }
 `;
@@ -106,7 +106,7 @@ const Social = styled.div`
 const Logo = styled.div`
   text-align: center;
   img {
-    width: 105px;
+    width: 125px;
     height: auto;
     transition: transform 0.3s ease;
     
@@ -131,7 +131,7 @@ const FullscreenNav = styled.nav`
   align-items: center;
   padding-top:100px;
   padding-bottom: 40px;
-  z-index: 998;
+  z-index: 99998;
   
   /* Initial state (hidden) */
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -191,7 +191,7 @@ const Header = () => {
           ) : (
             <>
               <span style={{ marginRight: "5px" }}>
-                <IoReorderTwoOutline />
+                <IoIosMenu />
               </span>{" "}
               MENU
             </>
@@ -204,7 +204,7 @@ const Header = () => {
 
         <Button onClick={()=>navigate("/contact-us")}>
           INQUIRE 
-          <CgArrowLongRight />
+         <GoArrowUpRight />
         </Button>
       </HeaderContainer>
 

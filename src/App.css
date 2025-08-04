@@ -2,7 +2,7 @@
   text-align: center;
 }
 p{
-  font-family: "Archivo", "Archivo Placeholder", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 .App-logo {
   height: 40vmin;
@@ -15,7 +15,7 @@ p{
   }
 }
 *{
-  font-family: "Archivo", "Archivo Placeholder", sans-serif;
+  font-family:"Plus Jakarta Sans", sans-serif;
   
 }
 .App-header {
