@@ -98,7 +98,7 @@ header .links button:hover {
 
 .hero {
   background: #000 url(../src/Assets/banner-img.png);
-  background-size: 100%;
+  background-size: cover;
   position: relative;
   top: 0px;
   z-index: 1;
