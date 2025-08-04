@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const blogCardsRef = useRef([]);
-   const textRef = useRef(null);
+  const textRef = useRef(null);
   const boxesRef = useRef(null);
   const imageScrollRef = useRef(null);
   const [portfolioItems, setPortfolioItems] = useState([
@@ -61,12 +61,12 @@ const HomePage = () => {
     "./Assets/exterior/TRILLIUM_12.png",
     // Add more images as needed
   ];
-  const boxes =[
-              { title: "Confidence in quality", icon: "🏗️" },
-              { title: "Clarity in communication", icon: "🗣️" },
-              { title: "Commitment to timelines", icon: "⏰" },
-              { title: "Comfort in living", icon: "🏡" },
-            ]
+  const boxes = [
+    { title: "Confidence in quality", icon: "🏗️" },
+    { title: "Clarity in communication", icon: "🗣️" },
+    { title: "Commitment to timelines", icon: "⏰" },
+    { title: "Comfort in living", icon: "🏡" },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -210,8 +210,7 @@ const HomePage = () => {
     }
   }, []);
 
-
-   // Scroll & entrance animations
+  // Scroll & entrance animations
   useEffect(() => {
     gsap.from(textRef.current, {
       opacity: 0,
@@ -335,7 +334,7 @@ const HomePage = () => {
                       <img
                         src={src}
                         alt={`Gallery ${idx}`}
-                        className="w-[430px] lg:w-[370px] h-[430px] md:h-[370px] object-cover rounded-[2px]"
+                        className="w-[370px] lg:w-[431px] h-[370px] md:h-[430px] object-cover rounded-[2px]"
                       />
                     </div>
                   ))}
@@ -357,7 +356,7 @@ const HomePage = () => {
         >
           <div className="about-section rounded-xl w-full">
             <div className="about-content relative text-left">
-              <h2 className="text-[35px] lg:text-[40px] font-bold ">
+              <h2 className="text-[35px] lg:text-[62px] font-bold ">
                 TRILLIUM
                 <br />
                 CLUBHOUSE
@@ -380,6 +379,7 @@ const HomePage = () => {
       </section>
 
       {/* Grand Vision Section */}
+        
       <section className="bg-white w-full overflow-hidden py-16 pb-[20px]">
         {/* Auto Scrolling Image Strip */}
         <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
@@ -413,8 +413,7 @@ const HomePage = () => {
         <div>sgdfg</div>
       </section> */}
 
-
-          {/* Top Info Section */}
+      {/* Top Info Section */}
       <section className="py-20 px-4 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
           {/* Text Left */}
@@ -423,20 +422,26 @@ const HomePage = () => {
               Built on Trust. <br /> Backed by Experience.
             </h2>
             <p className="text-gray-300">
-              Whether you're a first-time homebuyer or an investor, choosing Town Bell means choosing:
+              Whether you're a first-time homebuyer or an investor, choosing
+              Town Bell means choosing:
             </p>
           </div>
 
           {/* 4 Feature Boxes */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6" ref={boxesRef}>
+          <div
+            className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6"
+            ref={boxesRef}
+          >
             {boxes.map((item, idx) => (
               <div
                 key={idx}
-                className="border border-gray-600 p-4 rounded-md hover:border-white transition duration-300"
+                className="border border-gray-600 p-4 text-white rounded-md hover:border-white transition duration-300"
               >
                 <div className="text-2xl mb-2">{item.icon}</div>
                 <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-400 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-sm text-gray-400 mt-1">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
               </div>
             ))}
           </div>
@@ -445,17 +450,20 @@ const HomePage = () => {
 
       {/* Exterior Image Section */}
       <section className="bg-white text-black py-20 px-4 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+        <div className="w-full flex flex-col md:flex-row gap-10">
           {/* Text */}
           <div className="flex-1 space-y-4">
-            <h2 className="text-3xl font-bold">Exterior <br /> Amayra Trillium</h2>
+            <h2 className="text-3xl font-bold">
+              Exterior <br /> Amayra Trillium
+            </h2>
             <p className="text-gray-700">
-              Welcome to our world of creativity, where every project starts with a dream and ends with a space that feels like home.
+              Welcome to our world of creativity, where every project starts
+              with a dream and ends with a space that feels like home.
             </p>
           </div>
 
           {/* Image slider - infinite scroll */}
-          <div className="flex-1 overflow-hidden">
+          <div className="flex-2 overflow-hidden">
             <div className="flex w-[200%] gap-4" ref={imageScrollRef}>
               {[img1, img2, img3, img1, img2, img3].map((img, idx) => (
                 <img
