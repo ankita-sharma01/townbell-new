@@ -22,17 +22,17 @@ import joy6 from "../Assets/fla-6/fla-6.jpg";
 import img1 from "../Assets/fla-6/fla-6.jpg";
 import img2 from "../Assets/fla-6/fla-6.jpg";
 import img3 from "../Assets/fla-6/fla-6.jpg";
-import video from "../Assets/Media/videoplayback.mp4" 
-import { FaMedal } from "react-icons/fa";
-import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
-import { BsClockHistory } from "react-icons/bs";
-import { MdOutlineHome } from "react-icons/md";
+import video from "../Assets/Media/videoplayback.mp4";
+import icon1 from "../Assets/fla-6/icon-1.png";
+import icon2 from "../Assets/fla-6/icon-2.png";
+import icon3 from "../Assets/fla-6/icon-3.png";
+import icon4 from "../Assets/fla-6/icon-4.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const blogCardsRef = useRef([]);
-const headingRef = useRef(null);
+  const headingRef = useRef(null);
   const imageScrollRef = useRef(null);
   const [portfolioItems, setPortfolioItems] = useState([
     {
@@ -66,10 +66,10 @@ const headingRef = useRef(null);
     // Add more images as needed
   ];
   const boxes = [
-    { title: "Confidence in quality", icon:<FaMedal /> },
-    { title: "Clarity in communication", icon:<HiOutlineChatBubbleLeftRight /> },
-    { title: "Commitment to timelines", icon: <BsClockHistory /> },
-    { title: "Comfort in living", icon:<MdOutlineHome /> },
+    { title: "Confidence in quality", icon: icon1 },
+    { title: "Clarity in communication", icon: icon2 },
+    { title: "Commitment to timelines", icon: icon3 },
+    { title: "Comfort in living", icon: icon4 },
   ];
 
   useEffect(() => {
@@ -185,21 +185,21 @@ const headingRef = useRef(null);
   }, []);
 
   useEffect(() => {
-  const cards = document.querySelector(".horizontal-cards");
+    const cards = document.querySelector(".horizontal-cards");
 
-  gsap.to(".horizontal-cards", {
-    x: () => -(cards.scrollWidth - window.innerWidth),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".about-horizontal",  
-      start: "top top",
-      end: () => `+=${cards.scrollWidth}`, 
-      scrub: true,
-      pin: true,                       
-      anticipatePin: 1,
-    },
-  });
-}, []);
+    gsap.to(".horizontal-cards", {
+      x: () => -(cards.scrollWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".about-horizontal",
+        start: "top top",
+        end: () => `+=${cards.scrollWidth}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
+  }, []);
 
   // Add this useEffect hook for the about section image zoom
   useEffect(() => {
@@ -247,36 +247,36 @@ const headingRef = useRef(null);
 
   // Scroll & entrance animations
   useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(headingRef.current, {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: headingRef.current,
-      start: "top 80%",
-      toggleActions: "play none none none",
-    },
-  });
-  // Infinite image scroll
+    gsap.from(headingRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: headingRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+    // Infinite image scroll
     const scrollTimeline = gsap.timeline({ repeat: -1 });
     scrollTimeline.to(imageScrollRef.current, {
       x: "-50%",
       ease: "linear",
       duration: 20,
     });
-}, []);
- 
+  }, []);
+
   return (
     <div className="home-page bg-black">
       <div className="main-home-section relative">
         <div
           id="top"
-          className="hero w-full h-[120vh] flex flex-col items-center justify-start relative"
+          className="hero w-full md:h-[120vh] h-[100vh] flex flex-col items-center justify-start relative"
         >
-          <h1 className="archivo text-[30px] lg:text-[45px] md:text-[40px] font-bold leading-[1em] text-white ml-[40px] mt-[150px] md:mt-[137px] lg:mt-[130px]">
+          <h1 className="archivo text-[35px] lg:text-[65px] md:text-[50px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] mt-[150px] md:mt-[137px] lg:mt-[170px]">
             Your Trusted Real Estate
             <br /> Builder In Tricity.
           </h1>
@@ -289,7 +289,7 @@ const headingRef = useRef(null);
                 <br /> Town Bell
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px]  border-l border-[#494949] pl-[40px]">
+            <div className="max-w-3xl text-[18px]  md:border-l border-0  border-[#494949] md:pl-[40px] pl-0">
               <p>
                 With a strong legacy of excellence, Town Bell is one of the most
                 reputed and reliable builders in the Tricity region. Backed by
@@ -310,8 +310,7 @@ const headingRef = useRef(null);
       <div className="parent w-full h-[fit-content] lg:h-[250vh] bg-[#0D0D0D] relative">
         <div className="showreel w-full h-[90vh] md:h-screen lg:sticky top-0 flex flex-col items-center justify-center">
           <div className="top-blur absolute w-full h-[134px] pointer-events-none top-[-133px] left-p"></div>
-
-          <h1 className="archivo  text-[44px] lg:text-[140px] md:text-[90px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
+          <h1 className="archivo  text-[40px] lg:text-[140px] md:text-[90px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
             AMAYRA TRILLIUM
           </h1>
           <video
@@ -338,7 +337,7 @@ const headingRef = useRef(null);
                 <br /> A HOME OF JOY
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px] pl-[40px] items-center flex">
+            <div className="max-w-3xl text-[18px] md:pl-[40px] pl-[0px] items-center flex">
               <p>
                 With a strong legacy of excellence, Town Bell is one of the most
                 reputed and reliable builders in the Tricity region. Backed by
@@ -398,7 +397,7 @@ const headingRef = useRef(null);
           </div>
         </div>
 
-        <div className="about-image-container h-[100vh] overflow-hidden">
+        <div className="about-image-container lg:h-[100vh] h-[50vh] overflow-hidden">
           <img
             src={townBuilding}
             alt="Town Bell Garden"
@@ -408,8 +407,7 @@ const headingRef = useRef(null);
       </section>
 
       {/* Grand Vision Section */}
-        <div className="about-horizontal"> 
-
+      <div className="about-horizontal">
         <div className="bg-white">
           <div className="flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
             <div className="about-horizontal-content relative text-left">
@@ -418,7 +416,7 @@ const headingRef = useRef(null);
                 <br /> A HOME OF JOY
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px] pl-[40px] items-center flex">
+            <div className="max-w-3xl text-[18px] md:pl-[40px] pl-[0px] items-center flex">
               <p>
                 With a strong legacy of excellence, Town Bell is one of the most
                 reputed and reliable builders in the Tricity region. Backed by
@@ -430,54 +428,58 @@ const headingRef = useRef(null);
             </div>
           </div>
         </div>
-      <section className="bg-white w-full overflow-hidden pb-[40px]">
-
-        {/* Horizontal Scrolling Image Strip */}
-        <div className="horizontal-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
-          {portfolioItems.map((item, index) => (
-            <a href="#" key={index}>
-              <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
-                <img
-                  className="w-full h-full object-cover object-center"
-                  src={item.image}
-                  alt={item.title}
-                />
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-        </div>
+        <section className="bg-white w-full overflow-hidden pb-[40px]">
+          {/* Horizontal Scrolling Image Strip */}
+          <div className="horizontal-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
+            {portfolioItems.map((item, index) => (
+              <a href="#" key={index}>
+                <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover object-center"
+                    src={item.image}
+                    alt={item.title}
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* build trust */}
-      <section className=" py-[40px] px-4 md:px-[40px]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+      <section className="bannerb py-[60px] px-4">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
           {/* Text Left */}
-          <div className="flex-1 space-y-4">
-            <h2 ref={headingRef} className="text-[42px] md:text-[62px] text-white font-bold leading-tight">
-              Built on Trust. <br /> Backed by Experience.
-            </h2>
-            <p className="text-gray-300">
-              Whether you're a first-time homebuyer or an investor, choosing
-              Town Bell means choosing:
+          <span className="space-y-4 mt-3">
+            <h3
+              ref={headingRef}
+              className="flex text-[22px] capitalize md:text-[32px] text-white font-bold leading-tight"
+            >
+              Built on Trust. Backed <br /> by Experience.
+            </h3>
+            <p className="text-gray-300 text-[16px]">
+              Whether you're a first-time homebuyer or <br /> an investor,
+              choosing Town Bell means choosing:
             </p>
-          </div>
+          </span>
 
           {/* 4 Feature Boxes */}
-          <div
-            className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6"
-          >
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {boxes.map((item, idx) => (
               <div
                 key={idx}
-                className="flex justify-center border border-white-600 p-4 text-white rounded-md transition duration-300"
+                className="flex justify-center gap-2 border border-gray-600 py-6 p-2 text-white transition duration-300"
               >
-                <div className="text-2xl mb-2 pr-[10px]">{item.icon}</div>
-                <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-[18px] text-gray-400">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
+                <div className="svg-div">
+                  <img src={item.icon} alt={item.title} />
+                </div>
+                <div className="flex flex-col p-1">
+                  <h4 className="text-white-300">{item.title}</h4>
+                  {/* DASH LINE */}
+                  <div className="w-10 h-[2px] bg-white my-3"></div>
+                  <p className="text-[14px] text-white-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
                 </div>
               </div>
             ))}
@@ -507,7 +509,7 @@ const headingRef = useRef(null);
                   key={idx}
                   src={img}
                   alt={`exterior-${idx}`}
-                  className="w-1/3 object-cover rounded-md shadow-lg"
+                  className="w-1/3 object-cover shadow-lg"
                 />
               ))}
             </div>

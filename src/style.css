@@ -128,11 +128,15 @@ header .links button:hover {
     height: 203px;
     text-align: center;
     transform-origin: center center;
-    width: 54%;
+    width: 64%;
     text-align: center;
     justify-content: center;
 }
-
+.bannerb{
+    background: url(../src/Assets/fla-6/black-bg.jpg);
+    background-size: 100%;
+    
+}
 
 @media (max-width: 767px) {
   .hero {
@@ -140,7 +144,13 @@ header .links button:hover {
     background-size: cover;
     background-position: center;
   }
-  
+  .hero h1 {
+    width: 90%;
+  }
+.svg-div {
+  width:50%;
+
+}
 }
 button.hover-btn {
   backdrop-filter: blur(15px);
@@ -209,7 +219,10 @@ button.hover-btn:hover::before {
     transform: scale(1);
   }
 }
+.svg-div{
+  width:40%;
 
+}
 .parent {
   z-index: 29999; /* Appears above hero */
 }
@@ -256,6 +269,11 @@ button.hover-btn:hover::before {
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+@media (max-width: 767px) {
+.about-section {
+  gap: 10px;
+}
 }
 .about-content {
   flex: 1;

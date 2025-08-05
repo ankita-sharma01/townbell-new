@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer-top w-[95%] lg:w-full flex flex-col items-center gap-[30px]">
           <img
           onClick={()=>navigate("/")}
-            className="w-[150px] lg:w-[150px] my-[15px]"
+            className="w-[125px] lg:w-[125px] my-[15px]"
             src={siteLogo}
             alt="townbell"
           />
