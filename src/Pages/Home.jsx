@@ -144,10 +144,10 @@ const HomePage = () => {
       });
 
       // Horizontal scroll animation----------------------------------------------------------------
-      // gsap.to(".portfolio-cards", {
+      // gsap.to(".horizontal-cards", {
       //   x: () => {
       //     // Calculate total width to scroll
-      //     const cards = document.querySelector(".portfolio-cards");
+      //     const cards = document.querySelector(".horizontal-cards");
       //     return -(cards.scrollWidth - window.innerWidth);
       //   },
       //   scrollTrigger: {
@@ -157,20 +157,20 @@ const HomePage = () => {
       //     scrub: true,
       //   },
       // });
- ScrollTrigger.create({
-  trigger: ".about-horizontal",
-  start: "top top",
-  end: "bottom bottom",
-  pin: true,
-  onEnter: () => {
-    // Start horizontal scroll animation
-    gsap.to(".portfolio-cards", {
-      x: () => -(document.querySelector(".portfolio-cards").scrollWidth - window.innerWidth),
-      duration: 5,
-      ease: "none"
-    });
-  }
-});
+      // ScrollTrigger.create({
+      //   trigger: ".about-horizontal",
+      //   start: "top top",
+      //   end: "bottom bottom",
+      //   pin: true,
+      //   onEnter: () => {
+      //     // Start horizontal scroll animation
+      //     gsap.to(".horizontal-cards", {
+      //       x: () => -(document.querySelector(".horizontal-cards").scrollWidth - window.innerWidth),
+      //       duration: 5,
+      //       ease: "none"
+      //     });
+      //   }
+      // });
 
       // About section overlay animation
       gsap.to(".portfolio-parent", {
@@ -184,6 +184,23 @@ const HomePage = () => {
       });
     }
   }, []);
+
+  useEffect(() => {
+  const cards = document.querySelector(".horizontal-cards");
+
+  gsap.to(".horizontal-cards", {
+    x: () => -(cards.scrollWidth - window.innerWidth),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".about-horizontal",  
+      start: "top top",
+      end: () => `+=${cards.scrollWidth}`, 
+      scrub: true,
+      pin: true,                       
+      anticipatePin: 1,
+    },
+  });
+}, []);
 
   // Add this useEffect hook for the about section image zoom
   useEffect(() => {
@@ -399,9 +416,10 @@ const HomePage = () => {
       </section>
 
       {/* Grand Vision Section */}
-        
+        <div className="about-horizontal"> 
+
         <div className="bg-white">
-          <div className="about-horizontal flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
+          <div className="flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
             <div className="about-horizontal-content relative text-left">
               <h2 className="text-[35px] lg:text-[62px] font-bold">
                 A LIFE OF EASY,
@@ -420,10 +438,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      <section className="bg-white w-full overflow-hidden py-16 pb-[20px]">
+      <section className="bg-white w-full overflow-hidden pb-[40px]">
 
         {/* Horizontal Scrolling Image Strip */}
-        <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
+        <div className="horizontal-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
           {portfolioItems.map((item, index) => (
             <a href="#" key={index}>
               <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
@@ -437,6 +455,7 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+        </div>
 
       {/* build trust */}
       <section className=" py-[40px] px-4 md:px-[40px]">
