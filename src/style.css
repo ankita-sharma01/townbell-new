@@ -109,7 +109,7 @@ header .links button:hover {
   margin-top:-114px;
 }
 
-.hero h1 {
+/* .hero h1 {
     color: white;
     background: url(../src/Assets/banner-title-bg.png);
     background-size: cover;
@@ -118,6 +118,19 @@ header .links button:hover {
     height: 203px;
     align-items: center;
     display: flex;
+} */
+.hero h1 {
+    align-items: center;
+    background: url(../src/Assets/banner-title-bg.png);
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    height: 203px;
+    text-align: center;
+    transform-origin: center center;
+    width: 54%;
+    text-align: center;
+    justify-content: center;
 }
 @media (max-width: 767px) {
   .hero {

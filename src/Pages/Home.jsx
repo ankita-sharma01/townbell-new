@@ -291,8 +291,14 @@ const HomePage = () => {
             muted
             loop
             className="w-[95%] h-[60vh] md:h-full"
-            src="https://framerusercontent.com/assets/t3oWwHTiHPdqvISgXglF9dJecA.mp4"
+            src="https://youtu.be/kJZJeqaHqHw?si=BCq6L_BNWZrIVAEl"
           ></video>
+          {/* <iframe
+  className="w-[95%] h-[60vh] md:h-full"
+  src="https://www.youtube.com/embed/kJZJeqaHqHw?autoplay=1&mute=1&loop=1&playlist=kJZJeqaHqHw"
+  title="YouTube video"
+  allow="autoplay; encrypted-media"
+></iframe> */}
         </div>
       </div>
 
