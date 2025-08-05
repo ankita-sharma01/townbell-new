@@ -511,7 +511,7 @@ const HomePage = () => {
                   key={idx}
                   src={img}
                   alt={`exterior-${idx}`}
-                  className="w-1/3 object-cover shadow-lg"
+                  className="w-1/3 object-cover shadow-lg h-[75%]"
                 />
               ))}
             </div>
