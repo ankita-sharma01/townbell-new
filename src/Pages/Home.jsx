@@ -22,6 +22,11 @@ import joy6 from "../Assets/fla-6/fla-6.jpg";
 import img1 from "../Assets/fla-6/fla-6.jpg";
 import img2 from "../Assets/fla-6/fla-6.jpg";
 import img3 from "../Assets/fla-6/fla-6.jpg";
+import video from "../Assets/Media/videoplayback.mp4" 
+import { FaMedal } from "react-icons/fa";
+import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+import { BsClockHistory } from "react-icons/bs";
+import { MdOutlineHome } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,10 +67,10 @@ const HomePage = () => {
     // Add more images as needed
   ];
   const boxes = [
-    { title: "Confidence in quality", icon: "🏗️" },
-    { title: "Clarity in communication", icon: "🗣️" },
-    { title: "Commitment to timelines", icon: "⏰" },
-    { title: "Comfort in living", icon: "🏡" },
+    { title: "Confidence in quality", icon:<FaMedal /> },
+    { title: "Clarity in communication", icon:<HiOutlineChatBubbleLeftRight /> },
+    { title: "Commitment to timelines", icon: <BsClockHistory /> },
+    { title: "Comfort in living", icon:<MdOutlineHome /> },
   ];
 
   useEffect(() => {
@@ -170,7 +175,7 @@ const HomePage = () => {
   useEffect(() => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       gsap.to(".about-section-image", {
-        scale: 1.2,
+        scale: 1.1,
         scrollTrigger: {
           trigger: ".about-section",
           start: "top bottom",
@@ -223,7 +228,7 @@ const HomePage = () => {
     });
 
     gsap.from(boxesRef.current.children, {
-      opacity: 0,
+      opacity: 1,
       y: 30,
       duration: 0.6,
       stagger: 0.2,
@@ -291,14 +296,9 @@ const HomePage = () => {
             muted
             loop
             className="w-[95%] h-[60vh] md:h-full"
-            src="https://youtu.be/kJZJeqaHqHw?si=BCq6L_BNWZrIVAEl"
+            // src="https://framerusercontent.com/assets/t3oWwHTiHPdqvISgXglF9dJecA.mp4"
+            src={video}
           ></video>
-          {/* <iframe
-  className="w-[95%] h-[60vh] md:h-full"
-  src="https://www.youtube.com/embed/kJZJeqaHqHw?autoplay=1&mute=1&loop=1&playlist=kJZJeqaHqHw"
-  title="YouTube video"
-  allow="autoplay; encrypted-media"
-></iframe> */}
         </div>
       </div>
 
@@ -315,7 +315,7 @@ const HomePage = () => {
                 <br /> A HOME OF JOY
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px] pl-[40px] flex item-center">
+            <div className="max-w-3xl text-[18px] pl-[40px] items-center flex">
               <p>
                 With a strong legacy of excellence, Town Bell is one of the most
                 reputed and reliable builders in the Tricity region. Backed by
@@ -386,8 +386,29 @@ const HomePage = () => {
 
       {/* Grand Vision Section */}
         
+        <div className="bg-white">
+          <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
+            <div className="about-portfolio-content relative text-left">
+              <h2 className="text-[35px] lg:text-[62px] font-bold">
+                A LIFE OF EASY,
+                <br /> A HOME OF JOY
+              </h2>
+            </div>
+            <div className="max-w-3xl text-[18px] pl-[40px] items-center flex">
+              <p>
+                With a strong legacy of excellence, Town Bell is one of the most
+                reputed and reliable builders in the Tricity region. Backed by
+                years of experience and a proven track record, we have
+                successfully delivered a series of high-quality residential
+                projects that combine smart design, robust construction, and
+                lifestyle-driven amenities.
+              </p>
+            </div>
+          </div>
+        </div>
       <section className="bg-white w-full overflow-hidden py-16 pb-[20px]">
-        {/* Auto Scrolling Image Strip */}
+
+        {/* Horizontal Scrolling Image Strip */}
         <div className="portfolio-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
           {portfolioItems.map((item, index) => (
             <a href="#" key={index}>
@@ -404,27 +425,11 @@ const HomePage = () => {
       </section>
 
       {/* build trust */}
-      {/* <section className="trust p-[40px] flex justify-center item-center">
-        <div className="trust-content relative text-left text-white flex flec-col">
-          <h2 className="text-[35px] lg:text-[62px] font-bold">
-            Built On Trust,Backed
-            <br /> By Experience
-          </h2>
-          <p>
-            Whether You're a first-time homebuyer or
-            <br /> or an investor, choosing Town Bell means choosing:
-          </p>
-        </div>
-
-        <div>sgdfg</div>
-      </section> */}
-
-      {/* Top Info Section */}
-      <section className="py-20 px-4 md:px-16">
+      <section className=" py-[40px] px-4 md:px-[40px]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
           {/* Text Left */}
           <div className="flex-1 space-y-4" ref={textRef}>
-            <h2 className="text-3xl md:text-4xl text-white font-bold leading-tight">
+            <h2 className="text-[42px] md:text-[62px] text-white font-bold leading-tight">
               Built on Trust. <br /> Backed by Experience.
             </h2>
             <p className="text-gray-300">
@@ -445,7 +450,7 @@ const HomePage = () => {
               >
                 <div className="text-2xl mb-2">{item.icon}</div>
                 <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-400 mt-1">
+                <p className="text-[18px] text-gray-400">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
               </div>
@@ -455,11 +460,11 @@ const HomePage = () => {
       </section>
 
       {/* Exterior Image Section */}
-      <section className="bg-white text-black py-20 px-4 md:px-16">
+      <section className="bg-white text-black py-[40px] px-4 md:px-[40px]">
         <div className="w-full flex flex-col md:flex-row gap-10">
           {/* Text */}
-          <div className="flex-1 space-y-4">
-            <h2 className="text-3xl font-bold">
+          <div className="space-y-2">
+            <h2 className="text-[42px] md:text-[62px] font-bold">
               Exterior <br /> Amayra Trillium
             </h2>
             <p className="text-gray-700">
