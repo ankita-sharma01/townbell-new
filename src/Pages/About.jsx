@@ -131,7 +131,7 @@ const About = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <section 
-        className="relative w-full h-[120vh] flex items-center justify-center overflow-hidden"
+        className="main-home-section relative w-full h-[100vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${living})`,
           backgroundSize: "cover",
@@ -140,7 +140,7 @@ const About = () => {
         }}
         ref={heroRef}
       >
-        <div className="h-screen flex flex-col justify-end item-center text-center z-10 px-4">
+        <div className="h-screen flex flex-col justify-center item-center text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">About Us</h1>
           
           {/* Floating Element */}
@@ -156,7 +156,7 @@ const About = () => {
         ref={contentRef}
       >
         <div className="max-w-4xl mx-auto fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">
+          <h2 className="text-[35px] lg:text-[62px] font-bold text-center mb-8 text-gray-800">
             Shaping Tomorrow: A Global Titan in Construction
           </h2>
           
@@ -172,7 +172,7 @@ const About = () => {
       <section className="py-10 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="fade-up">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-[35px] lg:text-[62px]  font-bold mb-6 text-gray-800">
               Empowering brands through excellence
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -216,7 +216,7 @@ const About = () => {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet the Team</h2>
+            <h2 className="text-[35px] lg:text-[62px]  font-bold text-gray-800 mb-4">Meet the Team</h2>
             <p className="text-xl text-gray-600">The Minds Behind the Mission</p>
           </div>
           
