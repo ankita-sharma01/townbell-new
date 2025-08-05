@@ -32,8 +32,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const blogCardsRef = useRef([]);
-  const textRef = useRef(null);
-  const boxesRef = useRef(null);
+const headingRef = useRef(null);
   const imageScrollRef = useRef(null);
   const [portfolioItems, setPortfolioItems] = useState([
     {
@@ -248,35 +247,28 @@ const HomePage = () => {
 
   // Scroll & entrance animations
   useEffect(() => {
-    gsap.from(textRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: "top 80%",
-      },
-    });
+  gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(boxesRef.current.children, {
-      opacity: 1,
-      y: 30,
-      duration: 0.6,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: boxesRef.current,
-        start: "top 85%",
-      },
-    });
-
-    // Infinite image scroll
+  gsap.from(headingRef.current, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: headingRef.current,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+  // Infinite image scroll
     const scrollTimeline = gsap.timeline({ repeat: -1 });
     scrollTimeline.to(imageScrollRef.current, {
       x: "-50%",
       ease: "linear",
       duration: 20,
     });
-  }, []);
+}, []);
+ 
   return (
     <div className="home-page bg-black">
       <div className="main-home-section relative">
@@ -339,7 +331,7 @@ const HomePage = () => {
         className="portfolio-parent w-full lg:h-[100vh] relative bg-white z-9"
       >
         <div className="portfolio w-full flex flex-col items-centersticky top-[0px] left-0 overflow-hidden">
-          <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
+          <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full pt-[40px] px-[40px] pb-[20px]">
             <div className="about-portfolio-content relative text-left">
               <h2 className="text-[35px] lg:text-[62px] font-bold">
                 A LIFE OF EASY,
@@ -358,9 +350,9 @@ const HomePage = () => {
             </div>
           </div>
 
-          <section className="bg-white w-full overflow-hidden pb-[20px]">
+          <section className="bg-white w-full overflow-hidden">
             {/* Auto Scrolling Image Strip */}
-            <div className="relative w-full overflow-hidden py-2">
+            <div className="relative w-full overflow-hidden py-4">
               <div className="scrolling-container overflow-hidden">
                 <div className="scrolling-content flex">
                   {images.map((src, idx) => (
@@ -461,8 +453,8 @@ const HomePage = () => {
       <section className=" py-[40px] px-4 md:px-[40px]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
           {/* Text Left */}
-          <div className="flex-1 space-y-4" ref={textRef}>
-            <h2 className="text-[42px] md:text-[62px] text-white font-bold leading-tight">
+          <div className="flex-1 space-y-4">
+            <h2 ref={headingRef} className="text-[42px] md:text-[62px] text-white font-bold leading-tight">
               Built on Trust. <br /> Backed by Experience.
             </h2>
             <p className="text-gray-300">
@@ -474,18 +466,19 @@ const HomePage = () => {
           {/* 4 Feature Boxes */}
           <div
             className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6"
-            ref={boxesRef}
           >
             {boxes.map((item, idx) => (
               <div
                 key={idx}
-                className="border border-gray-600 p-4 text-white rounded-md hover:border-white transition duration-300"
+                className="flex justify-center border border-white-600 p-4 text-white rounded-md transition duration-300"
               >
-                <div className="text-2xl mb-2">{item.icon}</div>
+                <div className="text-2xl mb-2 pr-[10px]">{item.icon}</div>
+                <div className="flex flex-col">
                 <h3 className="font-semibold text-lg">{item.title}</h3>
                 <p className="text-[18px] text-gray-400">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
+                </div>
               </div>
             ))}
           </div>
