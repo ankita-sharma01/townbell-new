@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Footer = () => {
   const  navigate = useNavigate();
   return (
-    <div className="footer w-full mt-[20px] px-[10px] pb-[40px] md:px-0 flex flex-col items-center relative">
+    <div className="footer w-full mt-0 px-[10px] pb-[40px] md:px-0 flex flex-col items-center relative">
       <div className="footer-inner relative overflow-hidden w-[var(--box-width)] p-[60px] pb-[15px] md:p-[20px] flex flex-col items-center gap-[10px] rounded-[40px]">
         <div className="footer-top w-[95%] lg:w-full flex flex-col items-center gap-[30px]">
           <img

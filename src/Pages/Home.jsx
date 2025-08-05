@@ -493,7 +493,7 @@ const HomePage = () => {
       </section>
 
       {/* Exterior Image Section */}
-      <section className="bg-white text-black py-[40px] px-4 md:px-[40px]">
+      <section className="bg-white text-black py-[40px] px-[20px] md:px-[40px]">
         <div className="w-full flex flex-col md:flex-row gap-10">
           {/* Text */}
           <div className="space-y-2">
