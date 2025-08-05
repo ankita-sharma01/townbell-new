@@ -144,19 +144,33 @@ const HomePage = () => {
       });
 
       // Horizontal scroll animation----------------------------------------------------------------
-      gsap.to(".portfolio-cards", {
-        x: () => {
-          // Calculate total width to scroll
-          const cards = document.querySelector(".portfolio-cards");
-          return -(cards.scrollWidth - window.innerWidth);
-        },
-        scrollTrigger: {
-          trigger: ".about-image-container",
-          start: "top top",
-          end: "+=2000",
-          scrub: true,
-        },
-      });
+      // gsap.to(".portfolio-cards", {
+      //   x: () => {
+      //     // Calculate total width to scroll
+      //     const cards = document.querySelector(".portfolio-cards");
+      //     return -(cards.scrollWidth - window.innerWidth);
+      //   },
+      //   scrollTrigger: {
+      //     trigger: ".about-image-container",
+      //     start: "top top",
+      //     end: "+=4000",
+      //     scrub: true,
+      //   },
+      // });
+ ScrollTrigger.create({
+  trigger: ".about-horizontal",
+  start: "top top",
+  end: "bottom bottom",
+  pin: true,
+  onEnter: () => {
+    // Start horizontal scroll animation
+    gsap.to(".portfolio-cards", {
+      x: () => -(document.querySelector(".portfolio-cards").scrollWidth - window.innerWidth),
+      duration: 5,
+      ease: "none"
+    });
+  }
+});
 
       // About section overlay animation
       gsap.to(".portfolio-parent", {
@@ -387,8 +401,8 @@ const HomePage = () => {
       {/* Grand Vision Section */}
         
         <div className="bg-white">
-          <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
-            <div className="about-portfolio-content relative text-left">
+          <div className="about-horizontal flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
+            <div className="about-horizontal-content relative text-left">
               <h2 className="text-[35px] lg:text-[62px] font-bold">
                 A LIFE OF EASY,
                 <br /> A HOME OF JOY
