@@ -19,9 +19,11 @@ import joy3 from "../Assets/fla-6/fla-3.jpg";
 import joy4 from "../Assets/fla-6/fla-4.jpg";
 import joy5 from "../Assets/fla-6/fla-5.jpg";
 import joy6 from "../Assets/fla-6/fla-6.jpg";
-import img1 from "../Assets/fla-6/fla-6.jpg";
-import img2 from "../Assets/fla-6/fla-6.jpg";
-import img3 from "../Assets/fla-6/fla-6.jpg";
+import img1 from "../Assets/fla-6/exterio-1.jpg";
+import img2 from "../Assets/fla-6/exterio-2.jpg";
+import img3 from "../Assets/fla-6/exterio-3.jpg";
+import img4 from "../Assets/fla-6/exterio-4.jpg";
+import img5 from "../Assets/fla-6/exterio-5.jpg";
 import video from "../Assets/Media/videoplayback.mp4";
 import icon1 from "../Assets/fla-6/icon-1.png";
 import icon2 from "../Assets/fla-6/icon-2.png";
@@ -504,7 +506,7 @@ const HomePage = () => {
           {/* Image slider - infinite scroll */}
           <div className="flex-2 overflow-hidden">
             <div className="flex w-[200%] gap-4" ref={imageScrollRef}>
-              {[img1, img2, img3, img1, img2, img3].map((img, idx) => (
+              {[img1, img2, img3, img4, img5].map((img, idx) => (
                 <img
                   key={idx}
                   src={img}
