@@ -174,7 +174,7 @@ const SitePlans = () => {
     });
     // Gallery section animation
     gsap.from(galleryRef.current, {
-      opacity: 0,
+      opacity: 0.5,
       y: 50,
       duration: 1,
       scrollTrigger: {
@@ -657,7 +657,7 @@ const SitePlans = () => {
               >
                 {/* Content container */}
                 <div className="flex relative z-10 items-center gap-4">
-                  <div className="w-10 h-10 flex items-center justify-center text-black-600 duration-300">
+                  <div className="w-10 h-10 flex items-center justify-center group-hover:text-blue-800  text-black-600 duration-300">
                     {item.icon}
                   </div>
                   <div className="flex-1">
