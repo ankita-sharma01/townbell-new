@@ -9,14 +9,12 @@ import {
 } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import locationMap from "../Assets/amyra/am1-removebg-preview.png";
+import locationMap from "../Assets/maps/location-4.jpg";
 import map from "../Assets/maps/map.jpg";
 import floor1 from "../Assets/maps/floor-1.jpg";
 import floor2 from "../Assets/maps/floor-2.jpg";
 import floor3 from "../Assets/maps/floor-3.jpg";
 import floor4 from "../Assets/maps/floor-4.jpg";
-import backgroundAm1 from "../Assets/amyra/Amayra-map-bg.jpg";
-import backgroundAm2 from "../Assets/amyra/Amayra-text-bg.jpg";
 import backgroundAm3 from "../Assets/fla-6/black-bg.jpg";
 import amyraBanner from "../Assets/amyra/about-banner.jpg";
 import gallery1 from "../Assets/maps/img-1.jpg";
@@ -29,6 +27,7 @@ import gallery7 from "../Assets/maps/img-7.jpg";
 import gallery8 from "../Assets/maps/img-8.jpg";
 import gallery9 from "../Assets/maps/img-9.jpg";
 import club from "../Assets/maps/house-club-image.jpg";
+import bgTop from "../Assets/maps/bg-shadow-img.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +38,6 @@ const SitePlans = () => {
   const visionImageRef = useRef(null);
   const sitePlanTitleRef = useRef(null);
   const locationCardsRef = useRef([]);
-  const sitePlanMapRef = useRef(null);
   const mapSectionTitleRef = useRef(null);
   const mapSectionTextRef = useRef(null);
   const amenitiesTitleRef = useRef(null);
@@ -107,16 +105,6 @@ const SitePlans = () => {
           start: "top 80%",
         },
       });
-    });
-
-    gsap.from(sitePlanMapRef.current, {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      scrollTrigger: {
-        trigger: sitePlanMapRef.current,
-        start: "top 75%",
-      },
     });
 
     // Map section animations
@@ -384,7 +372,7 @@ const SitePlans = () => {
               >
                 Legends
               </h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
                 {amenitiesList.map((item, idx) => (
                   <div
                     key={idx}
@@ -421,16 +409,24 @@ const SitePlans = () => {
       </div>
 
       {/* floor section - No animations */}
-      <div className="min-h-screen bg-gradient-to-b from-black-50 to-white">
-        <div className="w-full px-4 sm:p-[20px] lg:p-[40px]">
-          <div className="w-full flex mb-7 justify-between items-center">
+      <div
+        className="min-h-screen "
+        style={{
+          backgroundImage: `url('${bgTop}')`,
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+          backgroundRepeat: "repeat-x",
+        }}
+      >
+        <div className="w-full lg:px-4 px-2 p-[20px] lg:p-[40px]">
+          <div className="w-full flex mb-7 justify-between items-center lg:flex-row flex-col">
             <div className="flex flex-col">
-              <p className="text-3xl text-black font-semibold">FLOOR PLANS</p>
-              <h2 className="capitalize text-[35px] lg:text-[55px] font-bold text-black-900 mb-4">
+              <p className="lg:text-3xl text-lg text-black font-semibold">FLOOR PLANS</p>
+              <h2 className="capitalize text-[30px] lg:text-[55px] font-bold text-black-900 mb-4">
                 The Proof Is In <br /> Our Portfolio
               </h2>
             </div>
-            <p className="w-1/2 text-gray-700">
+            <p className="lg:w-1/2 w-full text-gray-700">
               We make even the wildest architectural dreams into dramatic yet
               feasible finished products anyone would be proud of.
             </p>
@@ -439,18 +435,18 @@ const SitePlans = () => {
             {floors.map((floor, index) => (
               <div
                 key={index}
-                className="floor-section bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+                className="floor-section bg-white overflow-hidden flex flex-col md:flex-row"
               >
                 <div className="md:w-1/2 p-4 flex items-center justify-center">
                   <div className="relative">
                     <img
                       src={floor.image}
                       alt="Family dining together"
-                      className="w-full h-[100vh] object-contain"
+                      className="w-full lg:h-[100vh] h-[52vh] object-contain"
                     />
                   </div>
                 </div>
-                <div className="md:w-1/2 p-12 flex flex-col justify-center">
+                <div className="md:w-1/2 lg:p-12 p-4 flex flex-col justify-center">
                   <h3 className="capitalize text-[18px] lg:text-[25px] font-bold text-black-800 mb-0">
                     {floor.title}
                   </h3>
@@ -458,7 +454,7 @@ const SitePlans = () => {
                     {floor.subTitle}
                   </h4>
                   <div className="inline-block bg-black-100 text-black-800 mt-8 px-4 py-2 rounded-full font-medium">
-                    <ul className="list-none w-[55%]">
+                    <ul className="list-none lg:w-[55%] w-[100%]">
                       <li className="text-lg flex justify-between">
                         <b>Super Area </b> {floor.superArea}
                       </li>
@@ -491,7 +487,7 @@ const SitePlans = () => {
 
           {/* Right Content */}
           <div
-            className="w-full lg:w-1/2 md:p-[50px] p-[20px]"
+            className="w-full lg:w-1/2 md:p-[50px] p-[20px] flex flex-col justify-center"
             style={{
               backgroundImage: `url('${backgroundAm3}')`,
               backgroundPosition: "left center",
@@ -502,7 +498,7 @@ const SitePlans = () => {
             <h2 className="text-2xl text-center md:text-3xl font-bold pb-2">
               Key Project Highlights:
             </h2>
-            <div className="w-[60%] text-center h-[2px] bg-yellow-500 mx-auto mb-6"></div>
+            <div className="w-[50%] text-center h-[2px] bg-yellow-500 mx-auto mb-6"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 lg:mt-16 mt-6 text-sm md:text-base">
               {/* Left Column */}
               <ul className="space-y-2 list-disc list-inside">
@@ -527,12 +523,29 @@ const SitePlans = () => {
       </div>
 
       {/* Last Section - Image Slider */}
-      <section
-        ref={galleryRef}
-        className="bg-[#1f1e1c] py-20 px-4 relative z-999"
-      >
-        <div className="w-full mx-auto flex flex-cols flex-wrap p-4 gap-4 justify-center">
-          <div className="flex flex-col gap-4  max-w-[30%]">
+      <section className="bg-[#1f1e1c] lg:py-12 py-0 px-4 relative z-999">
+        <div
+          ref={galleryRef}
+          className="w-full mx-auto flex flex-cols flex-wrap p-4 gap-4 lg:justify-center justify-normal"
+        >
+          <div className="max-w-6xl lg:flex-row flex mb-7 justify-between items-center flex-col">
+            <div className="flex">
+              <h2 className="capitalize text-[30px] lg:text-[35px] font-bold text-white mb-4">
+                A Flourishing Community
+              </h2>
+            </div>
+            <span
+              className="lg:w-1/2 w-full text-white"
+              style={{ fontSize: "14px!important" }}
+            >
+              At Town Bell, life flourishes beyond your doorstep. Discover
+              lively communal areas, relaxing leisure zones, and purposefully
+              crafted spaces where families bond, children thrive, and every
+              moment becomes a lasting memory.
+            </span>
+          </div>
+          <div className="w-[90%] text-center h-[0.5px] bg-[#ffffff75] mx-auto mb-2"></div>
+          <div className="flex flex-col lg:gap-4 gap-2  lg:max-w-[30%] max-w-[29%] mt-[50px]">
             <div className="relative w-full">
               <img
                 src={gallery1}
@@ -556,7 +569,7 @@ const SitePlans = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4  max-w-[30%]">
+          <div className="flex flex-col lg:gap-4 gap-2 lg:max-w-[30%] max-w-[29%] ">
             <div className="relative w-full">
               {" "}
               {/* Adjust the margin-top to move the middle image up */}
@@ -584,7 +597,7 @@ const SitePlans = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4  max-w-[30%]">
+          <div className="flex flex-col lg:gap-4 gap-2 lg:max-w-[30%] max-w-[29%] mt-[50px]">
             <div className="relative w-full">
               <img
                 src={gallery3}
@@ -612,35 +625,18 @@ const SitePlans = () => {
 
       {/* siteplan proof */}
       <div>
-        <div className="w-full grid lg:grid-cols-2 items-center">
+        <div className="w-full grid lg:grid-cols-2 items-center m-0">
           {/* Left -Map Image*/}
-          <div
-            className="flex justify-center items-center h-full"
-            style={{
-              backgroundImage: `url('${backgroundAm1}')`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="flex justify-center items-center h-full p-0 m-0">
             <img
-              ref={sitePlanMapRef}
               src={locationMap}
               alt="Location Map"
-              className="w-max-5xl mx-auto"
+              className="w-max-5xl m-0 h-full"
             />
           </div>
 
           {/* Right -  Location Cards  */}
-          <div
-            className="grid grid-cols-1 sm:grid-cols-1 p-6 gap-1 md:gap-2 "
-            style={{
-              backgroundImage: `url('${backgroundAm2}')`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:p-12 p-6 gap-1 md:gap-2 bg-[#612831] ">
             <div
               ref={sitePlanTitleRef}
               className="w-full flex flex-col m-0 pb-[20px] px-4"
@@ -657,21 +653,15 @@ const SitePlans = () => {
               >
                 {/* Content container */}
                 <div className="flex relative z-10 items-center gap-4">
-                  <div className="w-10 h-10 flex items-center justify-center group-hover:text-blue-800  text-black-600 duration-300">
+                  <div className="w-10 h-10 flex items-center justify-center text-black-600 duration-300">
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white-900 text-xl font-semibold group-hover:text-blue-800 transition-colors duration-300">
+                    <h3 className="text-white-900 text-xl font-semibold transition-colors duration-300">
                       {item.title} {item.time}
                     </h3>
                   </div>
                 </div>
-
-                {/* Subtle hover effect */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-white to-blue-50 opacity-0 
-                     group-hover:opacity-100 transition-opacity duration-500 z-0"
-                ></div>
               </div>
             ))}
           </div>
