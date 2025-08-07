@@ -112,6 +112,7 @@ const Social = styled.div`
 
 const Logo = styled.div`
   text-align: center;
+  cursor: pointer;
   img {
     width: 125px;
     height: auto;
@@ -120,9 +121,7 @@ const Logo = styled.div`
     &:hover {
       transform: scale(1.05);
     }
-    @media (min-width: 768px) {
-      width: 80px;
-    }
+     
   }
 `;
 
@@ -215,6 +214,7 @@ const Header = () => {
             src={siteLogo}
             alt="Skytouch Logo"
             onClick={() => navigate("/")}
+            className="2xl:w-[125px] lg:w-[125px] md:w-[80px] w-[80px]"
           />
         </Logo>
 

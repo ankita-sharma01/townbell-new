@@ -278,7 +278,7 @@ const HomePage = () => {
           id="top"
           className="hero w-full md:h-[120vh] h-[100vh] flex flex-col items-center justify-start relative"
         >
-          <h1 className="archivo text-[35px] lg:text-[65px] md:text-[50px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] mt-[150px] md:mt-[137px] lg:mt-[170px]">
+          <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] lg:mt-[165px] md:mt-[137px] mt-[150px]">
             Your Trusted Real Estate
             <br /> Builder In Tricity.
           </h1>
@@ -286,12 +286,12 @@ const HomePage = () => {
         <div className="main-about bg-black text-white py-[40px] px-8 pb-0 md:px-20">
           <div className="about-home flex flex-col md:flex-row justify-between item-center w-full">
             <div className="about-home-content relative text-left">
-              <h2 className="text-[35px] lg:text-[62px] font-bold">
+              <h2 className="2xl:text-[65px] xl:text-[62px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
                 About
                 <br /> Town Bell
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px]  md:border-l border-0  border-[#494949] md:pl-[40px] pl-0">
+            <div className="max-w-3xl  lg:text-[18px] md:text-[16px] text-[15px] md:border-l border-0  border-[#494949] md:pl-[40px] pl-0">
               <p>
                 With a strong legacy of excellence, Town Bell is one of the most
                 reputed and reliable builders in the Tricity region. Backed by

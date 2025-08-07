@@ -252,18 +252,15 @@ const About = () => {
       {/* Section 1: About Our Agency-------------------------white */}
       <div
         id="about"
-        className="w-full flex justify-center relative mb-[75px] lg:pb-[100px]  "
+        className="w-full flex justify-center relative lg:py-[40px]  "
       >
-        <div className="w-[95%] max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start z-50 gap-[25px] lg:gap-0 lg:pb-[100px] lg:py-[40px]">
+        <div className="w-[95%] max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start z-50 gap-[25px] lg:gap-0">
           <div className="concept-heading w-[95%] h-full lg:w-[33%] flex flex-col md:flex-row lg:flex-col justify-between items-center md:items-start relative">
             <h2 className="capitalize text-[30px] font-semibold leading-[1.2em] lg:sticky top-[50px] mb-7 lg:mb-[100px]">
               About Our Agency
             </h2>
 
-            <button className="hover-btn   text-[14px] lg:text-[16px] font-bold leading-[1em]rounded-[50px] py-[18px] px-[30px] lg:py-[17px] lg:px-[33px] cursor-pointer flex items-center gap-[8px] relative">
-              <div className="red-circle w-[12px] h-[12px] bg-[#FF000D] text-black rounded-full"></div>
-              <span>Know More About Us</span>
-            </button>
+            
           </div>
 
           <div className="about-content w-[95%] lg:w-[67%] flex flex-col gap-[15px] lg:gap-[30px]">
@@ -324,28 +321,28 @@ const About = () => {
               exceeding our clients' expectations.
             </p>
             <div className="counts w-full flex items-center justify-center lg:justify-start flex-wrap mt-[0px] lg:mt-[40px]">
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12">
+              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
                 <h3 className="text-[90px] text-[#0000006b] font-bold">15+</h3>
                 <p className="w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
                   Years of experience
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative">
+              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
                 <h3 className="text-[90px] text-[#0000006b] font-bold">200+</h3>
                 <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
                   Repeated Clients
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative">
+              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
                 <h3 className="text-[90px] text-[#0000006b] font-bold">478</h3>
                 <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
                   Completed Projects
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative">
+              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
                 <h3 className="text-[90px] text-[#0000006b] font-bold">350+</h3>
                 <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
                   Happy Clients
@@ -365,7 +362,7 @@ const About = () => {
           backgroundPosition: "center",
         }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 border-b-2 border-orange-500 inline-block pb-2">
+        <h2 className="capitalize text-xl md:text-2xl font-bold text-center mb-12 text-center inline-block pb-2">
           Our Values: The Secret Sauce in Every StoryStream Creation!
         </h2>
         <div className="grid md:grid-cols-1 grid-cols-2  gap-8 max-w-6xl mx-auto">
