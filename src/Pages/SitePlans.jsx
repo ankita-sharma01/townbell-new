@@ -17,10 +17,18 @@ import floor3 from "../Assets/maps/floor-3.jpg";
 import floor4 from "../Assets/maps/floor-4.jpg";
 import backgroundAm1 from "../Assets/amyra/Amayra-map-bg.jpg";
 import backgroundAm2 from "../Assets/amyra/Amayra-text-bg.jpg";
+import backgroundAm3 from "../Assets/fla-6/black-bg.jpg";
 import amyraBanner from "../Assets/amyra/about-banner.jpg";
-import amyra2 from "../Assets/exterior/TRILLIUM_10.png";
-import amyra3 from "../Assets/exterior/TRILLIUM_13.png";
-import club from "../Assets/exterior/TRILLIUM_5.png";
+import gallery1 from "../Assets/maps/img-1.jpg";
+import gallery2 from "../Assets/maps/img-2.jpg";
+import gallery3 from "../Assets/maps/img-3.jpg";
+import gallery4 from "../Assets/maps/img-4.jpg";
+import gallery5 from "../Assets/maps/img-5.jpg";
+import gallery6 from "../Assets/maps/img-6.jpg";
+import gallery7 from "../Assets/maps/img-7.jpg";
+import gallery8 from "../Assets/maps/img-8.jpg";
+import gallery9 from "../Assets/maps/img-9.jpg";
+import club from "../Assets/maps/house-club-image.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -251,25 +259,33 @@ const SitePlans = () => {
       title: " Typical Floor Plan",
       subTitle: " Tower A (3BHK)",
       image: floor1,
-      square: "1819.45 SQ. FT.",
+      superArea: "1851 SQ. FT.",
+      coveredArea: "1523 SQ. FT.",
+      carpetArea: "1124 SQ. FT.",
     },
     {
       title: " Typical Floor Plan",
       subTitle: " Tower B (3BHK)",
       image: floor2,
-      square: "1766.91 SQ. FT.",
+      superArea: "1767 SQ. FT.",
+      coveredArea: "1515 SQ. FT.",
+      carpetArea: "1124 SQ. FT.",
     },
     {
       title: " Typical Floor Plan",
       subTitle: " Tower C (3BHK)",
       image: floor3,
-      square: "1821.60 SQ. FT.",
+      superArea: " 1851 SQ. FT.",
+      coveredArea: "1523 SQ. FT.",
+      carpetArea: "1124 SQ. FT.",
     },
     {
       title: " Typical Floor Plan",
       subTitle: " Tower D (3BHK)",
       image: floor4,
-      square: "2703.96 SQ. FT.",
+      superArea: "2704 SQ. FT.",
+      coveredArea: "2127.50 SQ. FT.",
+      carpetArea: "1506 SQ. FT.",
     },
   ];
 
@@ -407,14 +423,14 @@ const SitePlans = () => {
       {/* floor section - No animations */}
       <div className="min-h-screen bg-gradient-to-b from-black-50 to-white">
         <div className="w-full px-4 sm:p-[20px] lg:p-[40px]">
-          <div className="w-full flex mb-7 gap-[80px] items-center">
+          <div className="w-full flex mb-7 justify-between items-center">
             <div className="flex flex-col">
               <p className="text-3xl text-black font-semibold">FLOOR PLANS</p>
               <h2 className="capitalize text-[35px] lg:text-[55px] font-bold text-black-900 mb-4">
                 The Proof Is In <br /> Our Portfolio
               </h2>
             </div>
-            <p className="flex-1 text-gray-700">
+            <p className="w-1/2 text-gray-700">
               We make even the wildest architectural dreams into dramatic yet
               feasible finished products anyone would be proud of.
             </p>
@@ -434,15 +450,25 @@ const SitePlans = () => {
                     />
                   </div>
                 </div>
-                <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                <div className="md:w-1/2 p-12 flex flex-col justify-center">
                   <h3 className="capitalize text-[18px] lg:text-[25px] font-bold text-black-800 mb-0">
                     {floor.title}
                   </h3>
                   <h4 className="text-[35px] lg:text-[45px] font-semibold">
                     {floor.subTitle}
                   </h4>
-                  <div className="inline-block bg-black-100 text-black-800 px-4 py-2 rounded-full font-medium">
-                    {floor.square}
+                  <div className="inline-block bg-black-100 text-black-800 mt-8 px-4 py-2 rounded-full font-medium">
+                    <ul className="list-none w-[55%]">
+                      <li className="text-lg flex justify-between">
+                        <b>Super Area </b> {floor.superArea}
+                      </li>
+                      <li className="text-lg flex justify-between">
+                        <b>Covered Area </b> {floor.coveredArea}
+                      </li>
+                      <li className="text-lg flex justify-between">
+                        <b>Carpet Area </b> {floor.carpetArea}
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -451,98 +477,139 @@ const SitePlans = () => {
         </div>
       </div>
 
-    
-
-      {/* Last Section - Image Slider */}
-      <section ref={galleryRef} className="bg-black py-20 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative">
-            <img
-              src={floor1}
-              alt="Gym"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div className="relative mt-[-50px]">
-            {" "}
-            {/* Adjust the margin-top to move the middle image up */}
-            <img
-              src={amyra2}
-              alt="Building"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div className="relative">
-            <img
-              src={floor2}
-              alt="Pool"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div className="relative">
-            <img
-              src={amyra3}
-              alt="Building"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div className="relative mt-[-50px]">
-            {" "}
-            {/* Adjust the margin-top to move the middle image up */}
-            <img
-              src={floor3}
-              alt="Pool with float"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-            <button className="absolute top-2 right-2 bg-white rounded-full p-2">
-              INQUIRE
-            </button>
-          </div>
-          <div className="relative">
-            <img
-              src={floor4}
-              alt="Family"
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
-            />
-          </div>
-        </div>
-      </section>
-  {/* plans section */}
-      <div className="bg-black text-white py-10 px-4 lg:px-20 z-999">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-center">
+      {/* plans section */}
+      <div className="bg-black relative text-white z-999">
+        <div className="w-full flex flex-col lg:flex-row justify-center">
           {/* Left Image */}
           <div className="w-full lg:w-1/2">
             <img
-              src={club}// Update with actual path
+              src={club} // Update with actual path
               alt="Project Club View"
-              className="w-full rounded-lg shadow-lg"
+              className="w-full"
             />
           </div>
 
           {/* Right Content */}
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b pb-2 inline-block">
+          <div
+            className="w-full lg:w-1/2 md:p-[50px] p-[20px]"
+            style={{
+              backgroundImage: `url('${backgroundAm3}')`,
+              backgroundPosition: "left center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <h2 className="text-2xl text-center md:text-3xl font-bold pb-2">
               Key Project Highlights:
             </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 mt-4 text-sm md:text-base">
+            <div className="w-[60%] text-center h-[2px] bg-yellow-500 mx-auto mb-6"></div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 lg:mt-16 mt-6 text-sm md:text-base">
               {/* Left Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsLeft.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li className="marker:text-yellow-500" key={idx}>
+                    {item}
+                  </li>
                 ))}
               </ul>
 
               {/* Right Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsRight.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li className="marker:text-yellow-500" key={idx}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Last Section - Image Slider */}
+      <section
+        ref={galleryRef}
+        className="bg-[#1f1e1c] py-20 px-4 relative z-999"
+      >
+        <div className="w-full mx-auto flex flex-cols flex-wrap p-4 gap-4 justify-center">
+          <div className="flex flex-col gap-4  max-w-[30%]">
+            <div className="relative w-full">
+              <img
+                src={gallery1}
+                alt="Gym"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src={gallery4}
+                alt="Building"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src={gallery7}
+                alt="Family"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4  max-w-[30%]">
+            <div className="relative w-full">
+              {" "}
+              {/* Adjust the margin-top to move the middle image up */}
+              <img
+                src={gallery2}
+                alt="Building"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              {" "}
+              {/* Adjust the margin-top to move the middle image up */}
+              <img
+                src={gallery5}
+                alt="Pool with float"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src={gallery8}
+                alt="Family"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4  max-w-[30%]">
+            <div className="relative w-full">
+              <img
+                src={gallery3}
+                alt="Pool"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src={gallery6}
+                alt="Family"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src={gallery9}
+                alt="Family"
+                className="w-full h-auto object-cover shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* siteplan proof */}
       <div>
         <div className="w-full grid lg:grid-cols-2 items-center">
