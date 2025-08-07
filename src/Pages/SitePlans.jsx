@@ -351,7 +351,7 @@ const SitePlans = () => {
             <div>
               <h2
                 ref={mapSectionTitleRef}
-                className="text-[35px] lg:text-[50px] font-semibold leading-snug mb-[10px]"
+                className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-semibold leading-snug mb-[10px]"
               >
                 A Home Of Comfort
               </h2>
@@ -395,7 +395,7 @@ const SitePlans = () => {
 
           {/* Right - Map Image */}
           <div className="max-w-7xl grid lg:grid-cols-1 gap-2 justify-center text-center items-top">
-            <h2 className="capitalize text-[32px] md:text-[45px] text-center font-semibold leading-snug mb-[20px]">
+            <h2 className="capitalize 2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] text-center font-semibold leading-snug mb-[20px]">
               Site Plan
             </h2>
             <img
@@ -422,7 +422,7 @@ const SitePlans = () => {
           <div className="w-full flex mb-7 justify-between items-center lg:flex-row flex-col">
             <div className="flex flex-col">
               <p className="lg:text-3xl text-lg text-black font-semibold">FLOOR PLANS</p>
-              <h2 className="capitalize text-[30px] lg:text-[55px] font-bold text-black-900 mb-4">
+              <h2 className="capitalize 2xl:text-[65px] xl:text-[55px] lg:text-[55px] md:text-[45px] text-[35px] font-bold text-black-900 mb-4">
                 The Proof Is In <br /> Our Portfolio
               </h2>
             </div>
@@ -641,7 +641,7 @@ const SitePlans = () => {
               ref={sitePlanTitleRef}
               className="w-full flex flex-col m-0 pb-[20px] px-4"
             >
-              <h2 className="text-3xl md:text-4xl text-white font-bold leading-snug mb-[20px]">
+              <h2 className="2xl:text-[40px] xl:text-[36px] lg:text-[33px] md:text-[30px] text-[25px] text-white font-bold leading-snug mb-[20px]">
                 A NEW MARVEL IN THE VICINITY OF GREATER MOHALI
               </h2>
             </div>

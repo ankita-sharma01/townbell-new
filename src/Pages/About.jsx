@@ -8,9 +8,9 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
 import team1 from "../Assets/about/team1.avif";
 import backgroundLines from "../Assets/about/background-lines.svg";
-import aboutIcon1 from "../Assets/about/about-img1.avif";
-import aboutIcon2 from "../Assets/about/about-img2.avif";
-import aboutIcon3 from "../Assets/about/about-img3.avif";
+import aboutIcon1 from "../Assets/about/award-icon.png";
+import aboutIcon2 from "../Assets/about/award-winner.png";
+import aboutIcon3 from "../Assets/about/award-winner-2.png";
 
 
 gsap.registerPlugin(ScrollTrigger);

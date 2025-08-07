@@ -24,7 +24,7 @@ import img2 from "../Assets/fla-6/exterio-2.jpg";
 import img3 from "../Assets/fla-6/exterio-3.jpg";
 import img4 from "../Assets/fla-6/exterio-4.jpg";
 import img5 from "../Assets/fla-6/exterio-5.jpg";
-import video from "../Assets/Media/videoplayback.mp4";
+import video from "../Assets/Media/Amayra-Trillium.mp4";
 import icon1 from "../Assets/fla-6/icon-1.png";
 import icon2 from "../Assets/fla-6/icon-2.png";
 import icon3 from "../Assets/fla-6/icon-3.png";
@@ -278,7 +278,7 @@ const HomePage = () => {
           id="top"
           className="hero w-full md:h-[120vh] h-[100vh] flex flex-col items-center justify-start relative"
         >
-          <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] lg:mt-[165px] md:mt-[137px] mt-[150px]">
+          <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] xl:mt-[170px] lg:mt-[160px] md:mt-[137px] mt-[150px]">
             Your Trusted Real Estate
             <br /> Builder In Tricity.
           </h1>
@@ -286,7 +286,7 @@ const HomePage = () => {
         <div className="main-about bg-black text-white py-[40px] px-8 pb-0 md:px-20">
           <div className="about-home flex flex-col md:flex-row justify-between item-center w-full">
             <div className="about-home-content relative text-left">
-              <h2 className="2xl:text-[65px] xl:text-[62px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
+              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
                 About
                 <br /> Town Bell
               </h2>
@@ -312,15 +312,14 @@ const HomePage = () => {
       <div className="parent w-full h-[fit-content] lg:h-[250vh] bg-[#0D0D0D] relative">
         <div className="showreel w-full h-[90vh] md:h-screen lg:sticky top-0 flex flex-col items-center justify-center">
           <div className="top-blur absolute w-full h-[134px] pointer-events-none top-[-133px] left-p"></div>
-          <h1 className="archivo  text-[40px] lg:text-[140px] md:text-[90px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
+          <h2 className="archivo  text-[40px] lg:text-[140px] md:text-[90px] font-bold leading-[1em] text-transparent mb-[15px] lg:mb-[0] md:mb-[10px] lg:absolute top-0 pt-[40px]">
             AMAYRA TRILLIUM
-          </h1>
+          </h2>
           <video
             autoPlay
             muted
             loop
             className="w-[95%] h-[60vh] md:h-full"
-            // src="https://framerusercontent.com/assets/t3oWwHTiHPdqvISgXglF9dJecA.mp4"
             src={video}
           ></video>
         </div>
@@ -334,7 +333,7 @@ const HomePage = () => {
         <div className="portfolio w-full flex flex-col items-centersticky top-[0px] left-0 overflow-hidden">
           <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full pt-[40px] px-[40px] pb-[20px]">
             <div className="about-portfolio-content relative text-left">
-              <h2 className="text-[35px] lg:text-[62px] font-bold">
+              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
                 A LIFE OF EASY,
                 <br /> A HOME OF JOY
               </h2>
@@ -386,7 +385,7 @@ const HomePage = () => {
         >
           <div className="about-section rounded-xl w-full">
             <div className="about-content relative text-left">
-              <h2 className="text-[35px] lg:text-[62px] font-bold ">
+              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold ">
                 TRILLIUM
                 <br />
                 CLUBHOUSE
@@ -413,7 +412,7 @@ const HomePage = () => {
         <div className="bg-white">
           <div className="flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
             <div className="about-horizontal-content relative text-left">
-              <h2 className="text-[35px] lg:text-[62px] font-bold">
+              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
                 A LIFE OF EASY,
                 <br /> A HOME OF JOY
               </h2>
@@ -494,7 +493,7 @@ const HomePage = () => {
         <div className="w-full flex flex-col md:flex-row gap-10">
           {/* Text */}
           <div className="space-y-2">
-            <h2 className="text-[42px] md:text-[62px] font-bold">
+            <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
               Exterior <br /> Amayra Trillium
             </h2>
             <p className="text-gray-700">
@@ -511,7 +510,7 @@ const HomePage = () => {
                   key={idx}
                   src={img}
                   alt={`exterior-${idx}`}
-                  className="w-1/3 object-cover shadow-lg h-[75%]"
+                  className="w-1/3 object-cover shadow-lg 2xl:h-[75%] xl:h-[60%] lg:h-[55%] md:h-[50%] h-[45%]"
                 />
               ))}
             </div>
