@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import siteLogo from "../Assets/TownLogo/logo.png";
@@ -14,7 +12,7 @@ import { IoIosMenu } from "react-icons/io";
 const HeaderWrapper = styled.header`
   z-index: 99999;
   width: 100%;
-  font-family:"Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 `;
 
 const HeaderContainer = styled.div`
@@ -49,6 +47,12 @@ const Button = styled.button`
     font-size: 21px;
     font-weight: 300;
   }
+
+  @media (max-width: 767px) {
+    .small {
+      display: none;
+    }
+  }
 `;
 
 const NavList = styled.ul`
@@ -56,13 +60,16 @@ const NavList = styled.ul`
   text-align: center;
   padding: 0;
   margin: 0;
+   @media (max-width: 767px) {
+   display: contents;
+  }
 `;
 
 const NavItem = styled.li`
   margin: 1.5rem 0;
   font-weight: bold;
   transition: transform 0.3s ease;
-  
+   
 `;
 
 const NavLink = styled.a`
@@ -72,12 +79,12 @@ const NavLink = styled.a`
   font-weight: 700;
   position: relative;
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: #ccc;
-    background:transparent;
+    background: transparent;
   }
-  
+
   @media (min-width: 768px) {
     font-size: 20px;
   }
@@ -90,12 +97,12 @@ const Social = styled.div`
   gap: 1rem;
   font-size: 35px;
   font-weight: 600;
-  
+
   svg {
     font-size: 35px;
     font-weight: 700;
     transition: transform 0.3s ease, color 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.1);
       color: #ccc;
@@ -109,9 +116,12 @@ const Logo = styled.div`
     width: 125px;
     height: auto;
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.05);
+    }
+    @media (min-width: 768px) {
+      width: 80px;
     }
   }
 `;
@@ -129,34 +139,36 @@ const FullscreenNav = styled.nav`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-top:100px;
+  padding-top: 100px;
   padding-bottom: 40px;
   z-index: 99998;
-  
+
   /* Initial state (hidden) */
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   opacity: 0;
-  
+
   /* Animation when menu is open */
-  ${({ menuOpen }) => menuOpen && `
+  ${({ menuOpen }) =>
+    menuOpen &&
+    `
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     opacity: 1;
   `}
-  
+
   transition: 
     clip-path 0.7s cubic-bezier(0.645, 0.045, 0.355, 1),
     opacity 0.5s ease;
-  
+
   /* Delay the content fade-in slightly */
   ${NavList}, ${Social} {
     opacity: 0;
     transform: translateY(20px);
-    transition: 
-      opacity 0.4s ease 0.3s,
-      transform 0.4s ease 0.3s;
+    transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
   }
-  
-  ${({ menuOpen }) => menuOpen && `
+
+  ${({ menuOpen }) =>
+    menuOpen &&
+    `
     ${NavList}, ${Social} {
       opacity: 1;
       transform: translateY(0);
@@ -166,13 +178,13 @@ const FullscreenNav = styled.nav`
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
- const  navigate = useNavigate();
+  const navigate = useNavigate();
   const toggleMenu = () => {
     // Prevent scrolling when menu is open
     if (!menuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
     setMenuOpen(!menuOpen);
   };
@@ -186,46 +198,60 @@ const Header = () => {
               <span style={{ marginRight: "5px" }}>
                 <RxCross1 />
               </span>{" "}
-              MENU
+              <span className="small">MENU</span>
             </>
           ) : (
             <>
               <span style={{ marginRight: "5px" }}>
                 <IoIosMenu />
               </span>{" "}
-              MENU
+              <span className="small">MENU</span>
             </>
           )}
         </Button>
 
         <Logo>
-          <img src={siteLogo} alt="Skytouch Logo" onClick={()=>navigate("/")} />
+          <img
+            src={siteLogo}
+            alt="Skytouch Logo"
+            onClick={() => navigate("/")}
+          />
         </Logo>
 
-        <Button onClick={()=>navigate("/contact-us")}>
-          INQUIRE 
-         <GoArrowUpRight />
+        <Button onClick={() => navigate("/contact-us")}>
+          <span className="small">INQUIRE</span>
+          <GoArrowUpRight />
         </Button>
       </HeaderContainer>
 
       <FullscreenNav menuOpen={menuOpen}>
         <NavList>
           <NavItem>
-            <NavLink href="/" onClick={toggleMenu}>HOME</NavLink>
+            <NavLink href="/" onClick={toggleMenu}>
+              HOME
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/amayra-project" onClick={toggleMenu}>AMAYRA TRILLIUM</NavLink>
+            <NavLink href="/amayra-project" onClick={toggleMenu}>
+              AMAYRA TRILLIUM
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/about-townbell" onClick={toggleMenu}>ABOUT</NavLink>
+            <NavLink href="/about-townbell" onClick={toggleMenu}>
+              ABOUT
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/contact-us" onClick={toggleMenu}>CONTACT</NavLink>
+            <NavLink href="/contact-us" onClick={toggleMenu}>
+              CONTACT
+            </NavLink>
           </NavItem>
         </NavList>
         <Social>
           <span>Follow </span>
-          <hr style={{ width: "100px", borderColor: "rgba(255,255,255,0.3)" }} />
+          <hr
+            style={{ width: "100px", borderColor: "rgba(255,255,255,0.3)" }}
+          />
           <NavLink href="#">
             <i className="fab fa-instagram">
               <FaInstagram />

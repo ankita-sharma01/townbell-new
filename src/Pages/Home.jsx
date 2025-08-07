@@ -221,7 +221,7 @@ const HomePage = () => {
   // Auto scroll images-------------------------------------------------------
   useEffect(() => {
     // Setup for the Grand Vision auto-scrolling image strip
-    if (window.matchMedia("(min-width: 768px)").matches) {
+    if (window.matchMedia("(min-width: 100px)").matches) {
       const container = document.querySelector(".scrolling-container");
       const scrollContent = document.querySelector(".scrolling-content");
 
@@ -364,7 +364,7 @@ const HomePage = () => {
                       <img
                         src={src}
                         alt={`Gallery ${idx}`}
-                        className="w-[370px] lg:w-[431px] h-[370px] md:h-[430px] object-cover rounded-[2px]"
+                        className="lg:w-[431px] md:w-[370px] w-[300px] h-[300px] md:h-[430px] object-cover rounded-[2px]"
                       />
                     </div>
                   ))}
@@ -435,7 +435,7 @@ const HomePage = () => {
           <div className="horizontal-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
             {portfolioItems.map((item, index) => (
               <a href="#" key={index}>
-                <div className="card w-[450px] lg:w-[650px] h-[270px] md:h-[370px] rounded-[2px] relative overflow-hidden">
+                <div className="card lg:w-[650px] md:w-[450px] w-[95%] md:h-[370px] h-[260px] rounded-[2px] relative overflow-hidden">
                   <img
                     className="w-full h-full object-cover object-center"
                     src={item.image}
