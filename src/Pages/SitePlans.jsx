@@ -352,13 +352,13 @@ const SitePlans = () => {
             <div className="flex justify-between items-center">
               <h2
                 ref={mapSectionTitleRef}
-                className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-semibold leading-snug mb-[10px]"
+                className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold mb-[10px]"
               >
-                A Home Of Comfort
+                A Home Of <br/> Comfort
               </h2>
               <p
                 ref={mapSectionTextRef}
-                className="lg:w-1/2 w-full pb-[20px] font-medium "
+                className="max-w-3xl w-full pb-[20px] font-medium "
               >
                 Step inside a space where comfort meets elegance, and every
                 detail speaks of refined living. Thoughtfully designed interiors
@@ -369,7 +369,7 @@ const SitePlans = () => {
                 that feels both luxurious and deeply personal.
               </p>
             </div>
-            <div className="w-[90%] text-center h-[0.5px] bg-[#ccc] mx-auto mb-2"></div>
+            <div className="w-[100%] text-center h-[0.5px] bg-[#ccc] mx-auto mb-2"></div>
           </div>
 
           {/* Right - Map Image */}
@@ -509,7 +509,7 @@ const SitePlans = () => {
               {/* Left Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsLeft.map((item, idx) => (
-                  <li className="marker:text-white-500" key={idx}>
+                  <li className="marker:text-white-500 xl:text-[16px] lg:text-[15px] md:text-[14px]" key={idx}>
                     {item}
                   </li>
                 ))}
@@ -518,7 +518,7 @@ const SitePlans = () => {
               {/* Right Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsRight.map((item, idx) => (
-                  <li className="marker:text-white-500" key={idx}>
+                  <li className="marker:text-white-500 2xl:text-[16px] xl:text-[15px] lg:text-[15px] md:text-[14px]" key={idx}>
                     {item}
                   </li>
                 ))}
@@ -658,7 +658,7 @@ const SitePlans = () => {
                 className="group relative flex flex-col items-start p-4 text-white transition-shadow duration-300"
               >
                 {/* Content container */}
-                <div className="inline-flex relative z-10 items-center gap-4 border-2 border-[#612831] hover:border-2 hover:border-[#ffffff] hover:rounded-2xl p-3">
+                <div className="flex w-full relative z-10 items-center gap-4 border border-[#612831] hover:border-[#ccc] hover:rounded-2xl p-3 cursor-pointer">
                   <div className="w-10 h-10 flex items-center justify-center text-black-600 duration-300">
                     {item.icon}
                   </div>

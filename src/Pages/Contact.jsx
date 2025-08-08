@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import living from "../Assets/about/contact-banner.jpg";
+import living from "../Assets/about/contact-banner-new.jpg";
 import {
   FaMapMarkerAlt,
   FaClock,
@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="text-left z-10 px-4 pb-[40px]">
           <div className="floating-element mx-auto bg-opacity-20 backdrop-blur-smp-6 max-w-md">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Amayra Trillium
+              Contact Us
             </h1>
           </div>
         </div>

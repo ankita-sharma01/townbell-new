@@ -300,7 +300,7 @@ const HomePage = () => {
         <div className="main-about relative bg-black text-white px-8 pb-[40px] z-[9999] md:px-20">
           <div className="about-home flex flex-col md:flex-row justify-between item-center w-full">
             <div className="about-home-content relative text-left">
-              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
+              <h2 className="2xl:text-[65px] xl:text-[65px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
                 About
                 <br /> Town Bell
               </h2>
@@ -429,7 +429,7 @@ const HomePage = () => {
         <div className="bg-white">
           <div className="flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
             <div className="about-horizontal-content relative text-left">
-              <h2 className="2xl:text-[65px] xl:text-[40px] lg:text-[40px] md:text-[35px] text-[30px] font-bold">
+              <h2 className="2xl:text-[60px] xl:text-[40px] lg:text-[35px] md:text-[30px] text-[30px] font-bold leading-[49px]">
                 Where Community and
                 <br /> Comfort Come Together
               </h2>

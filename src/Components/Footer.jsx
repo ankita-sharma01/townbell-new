@@ -69,7 +69,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="copyright w-[var(--box-width)] mt-[20px] flex flex-col md:flex-row items-center justify-between gap-[10px]">
+      <div className="copyright w-[90%] mt-[20px] flex flex-col md:flex-row items-center justify-between gap-[10px]">
         <p className="inter text-[12px] text-[#ffffff99] font-light leading-[1em]">
           © {new Date().getFullYear()} Townbell. All rights reserved.
         </p>
@@ -80,9 +80,7 @@ const Footer = () => {
           <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="/">
             Terms of Service
           </a>
-          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="/">
-            Cookie Policy
-          </a>
+           
         </div>
       </div>
     </div>
