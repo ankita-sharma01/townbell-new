@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import float from "../Assets/amyra/float-logo.png";
-import living from "../Assets/amyra/living-1.jpeg";
+import living from "../Assets/about/about-banner.jpg";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
 import team1 from "../Assets/about/team1.avif";
@@ -11,7 +11,14 @@ import backgroundLines from "../Assets/about/background-lines.svg";
 import aboutIcon1 from "../Assets/about/award-icon.png";
 import aboutIcon2 from "../Assets/about/award-winner.png";
 import aboutIcon3 from "../Assets/about/award-winner-2.png";
-
+import {
+  FaPlus,
+  FaBullseye,
+  FaHandshake,
+  FaLightbulb,
+  FaUsers,
+  FaSearch,
+} from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -219,6 +226,38 @@ const About = () => {
       linkedin: "#",
     },
   ];
+  const features = [
+    {
+      icon: <FaPlus className="text-white-500 text-2xl mb-4" />,
+      title: "Exceptional Creativity",
+      desc: "Clients choose us for our unparalleled creative prowess. We breathe life into ideas, turning them into visually stunning, memorable videos.",
+    },
+    {
+      icon: <FaBullseye className="text-white-500 text-2xl mb-4" />,
+      title: "Proven Track Record",
+      desc: "Our portfolio is a testament to our success. We’ve consistently delivered outstanding results, earning the trust of clients time and again.",
+    },
+    {
+      icon: <FaHandshake className="text-white-500 text-2xl mb-4" />,
+      title: "Collaborative Approach",
+      desc: "We don’t just work for our clients; we work with them. Our collaborative spirit ensures that each project is a true partnership, vision coming to life.",
+    },
+    {
+      icon: <FaLightbulb className="text-white-500 text-2xl mb-4" />,
+      title: "Innovative Solutions",
+      desc: "We’re known for pushing boundaries and finding innovative solutions. Clients appreciate our ability to think outside the box and deliver beyond expectations.",
+    },
+    {
+      icon: <FaUsers className="text-white-500 text-2xl mb-4" />,
+      title: "Exceptional Team",
+      desc: "Our team is a powerhouse of talent, experience, and passion. Clients choose us for the depth of expertise and dedication we bring to every project.",
+    },
+    {
+      icon: <FaSearch className="text-white-500 text-2xl mb-4" />,
+      title: "Attention to Detail",
+      desc: "We obsess over the finer points. Every frame, every edit, every sound is carefully crafted to ensure the highest quality and maximum impact.",
+    },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -256,14 +295,12 @@ const About = () => {
       >
         <div className="w-[95%] max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start z-50 gap-[25px] lg:gap-0">
           <div className="concept-heading w-[95%] h-full lg:w-[33%] flex flex-col md:flex-row lg:flex-col justify-between items-center md:items-start relative">
-            <h2 className="capitalize text-[30px] font-semibold leading-[1.2em] lg:sticky top-[50px] mb-7 lg:mb-[100px]">
-              About Our Agency
+            <h2 className="capitalize xl:text-[50px] lg:text-[55px] text-[30px] font-bold leading-[1.2em] lg:sticky top-[50px] mb-7 lg:mb-[100px]">
+              About <br /> Our Agency
             </h2>
-
-            
           </div>
 
-          <div className="about-content w-[95%] lg:w-[67%] flex flex-col gap-[15px] lg:gap-[30px]">
+          <div className="about-content w-[95%] lg:w-[67%] flex flex-col gap-[15px] lg:gap-[20px]">
             <div className="max-w-xl flex items-center justify-between">
               <div>
                 <img
@@ -302,7 +339,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <h2 className="font-['Inter'] text-[30px] md:text-[36px] text-[#00000080] font-light leading-[1.2em] tracking-[-1.5px] md:tracking-[-3px]">
+            <h2 className="font-['Inter'] text-[28px] md:text-[32px] text-[#00000080] font-light leading-[1.2em] tracking-[-1.5px] md:tracking-[-3px]">
               Established in 2015, we have dedicated ourselves to{" "}
               <span className="text-black">
                 crafting captivating visual narratives
@@ -321,30 +358,38 @@ const About = () => {
               exceeding our clients' expectations.
             </p>
             <div className="counts w-full flex items-center justify-center lg:justify-start flex-wrap mt-[0px] lg:mt-[40px]">
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
-                <h3 className="text-[90px] text-[#0000006b] font-bold">15+</h3>
-                <p className="w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
+              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
+                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
+                  15+
+                </h3>
+                <p className="w-full text-[17px] font-bold uppercase">
                   Years of experience
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
-                <h3 className="text-[90px] text-[#0000006b] font-bold">200+</h3>
-                <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
+              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
+                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
+                  200+
+                </h3>
+                <p className="  w-full text-[17px] font-bold uppercase">
                   Repeated Clients
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
-                <h3 className="text-[90px] text-[#0000006b] font-bold">478</h3>
-                <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
+              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
+                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
+                  478
+                </h3>
+                <p className="  w-full text-[17px] font-bold uppercase">
                   Completed Projects
                 </p>
               </div>
 
-              <div className="count-box w-full md:w-[40%] flex items-center justify-center relative p-12 my-[40px]">
-                <h3 className="text-[90px] text-[#0000006b] font-bold">350+</h3>
-                <p className="  w-full text-[17px] font-bold uppercase text-center absolute top-[50%] left-[100%] -translate-x-[50%] translate-y-[-50%]">
+              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
+                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
+                  350+
+                </h3>
+                <p className="  w-full text-[17px] font-bold uppercase">
                   Happy Clients
                 </p>
               </div>
@@ -355,19 +400,19 @@ const About = () => {
 
       {/* Section 2: Our values-----------------------black */}
       <div
-        className="bg-black text-white min-h-screen py-16 px-4"
+        className="bg-black text-white min-h-screen py-10 px-4"
         style={{
           backgroundImage: `url(${backgroundLines})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <h2 className="capitalize text-xl md:text-2xl font-bold text-center mb-12 text-center inline-block pb-2">
+        <h2 className="max-w-4xl capitalize xl:text-[35px] lg:text-[32px] md:text-[30px] text-[28px] font-bold text-center mb-8 b-2 mx-auto">
           Our Values: The Secret Sauce in Every StoryStream Creation!
         </h2>
-        <div className="grid md:grid-cols-1 grid-cols-2  gap-8 max-w-6xl mx-auto">
-          <div className="value-card flex items-center mb-8 relative">
-            <div className="text-6xl mr-4 text-gray-400">01</div>
+        <div className="grid md:grid-cols-1 grid-cols-2  gap-8 max-w-4xl mx-auto">
+          <div className="value-card flex flex-col mb-8 lg:mr-[260px] md:mr-[200px] mr-[100px]">
+            <div className="text-6xl font-bold mr-4 text-gray-400">01</div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">Creativity</h2>
               <p className="text-gray-400">
@@ -377,8 +422,8 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="value-card flex items-center mb-8">
-            <div className="text-6xl mr-4 text-gray-400">02</div>
+          <div className="value-card flex flex-col mb-8 lg:ml-[260px] md:ml-[200px] ml-[100px]">
+            <div className="text-6xl font-bold mr-4 text-gray-400">02</div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">Quality</h2>
               <p className="text-gray-400">
@@ -388,8 +433,8 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="value-card flex items-center mb-8">
-            <div className="text-6xl mr-4 text-gray-400">03</div>
+          <div className="value-card flex flex-col mb-8 lg:mr-[260px] md:mr-[200px] mr-[100px]">
+            <div className="text-6xl font-bold mr-4 text-gray-400">03</div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">Collaboration</h2>
               <p className="text-gray-400">
@@ -399,8 +444,8 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="value-card flex items-center mb-8">
-            <div className="text-6xl mr-4 text-gray-400">04</div>
+          <div className="value-card flex flex-col mb-8 lg:ml-[260px] md:ml-[200px] ml-[100px]">
+            <div className="text-6xl font-bold mr-4 text-gray-400">04</div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">Integrity</h2>
               <p className="text-gray-400">
@@ -415,30 +460,37 @@ const About = () => {
       </div>
 
       {/* Section 3:Our Fantastic Team-----------------------white */}
-      <section className="bg-black text-white py-16 px-4">
+      <section className="py-12 px-4">
+        <div className="ml-4">
+          <h2 className="text-4xl font-bold mb-8 capitalize">
+            Peek Behind the Curtain: Meet Our Fantastic Team!
+          </h2>
+        </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-[#111] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-center"
+              className="border border-black p-3 overflow-hidden flex flex-col items-center text-center"
             >
               <img
                 src={member.image}
                 alt={member.name}
                 className="w-full h-[300px] object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="text-sm text-[#999] tracking-wide mt-1 uppercase">
+              <div className="pt-4 w-full">
+                <h3 className="text-[18px] font-bold leading-1.5">
+                  {member.name}
+                </h3>
+                <p className="text-[14px] text-[#999] tracking-wide mt-1 uppercase">
                   {member.role}
                 </p>
 
-                <div className="mt-6 w-full space-y-3">
+                <div className="mt-4 w-full space-y-3">
                   <a
                     href={member.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full bg-[#222] text-sm py-3 px-4 rounded-full hover:bg-[#333] transition"
+                    className="flex items-center justify-between w-full bg-[#ffffff] border border-black text-sm py-3 px-4 hover:bg-[#b9b9b9c0] hover:border-white transition"
                   >
                     <div className="flex items-center gap-2">
                       <FaFacebookF />
@@ -451,7 +503,7 @@ const About = () => {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full bg-[#222] text-sm py-3 px-4 rounded-full hover:bg-[#333] transition"
+                    className="flex items-center justify-between w-full bg-[#ffffff] border border-black text-sm py-3 px-4 hover:bg-[#b9b9b9c0] hover:border-white transition"
                   >
                     <div className="flex items-center gap-2">
                       <FaLinkedinIn />
@@ -467,39 +519,37 @@ const About = () => {
       </section>
 
       {/* Section 4 : Why us?  --------------------------black */}
-      <div className="bg-black text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Why us?</h2>
-          <div
-            class
-            className="flex flex-col md:flex-row justify-between items-center"
-          >
+      <div className="bg-black text-white py-10 px-4">
+        <div className="max-w-7xl mx-auto border border-white  p-10">
+          <div class className="flex flex-col md:flex-row justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <img
                 src={team1}
+                style={{ backgroundSize: "contain" }}
                 alt="Team at work"
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full"
               />
             </div>
             <div className="md:w-1/2 md:pl-12">
-              <p className="mb-6">
+              <h2 className="capitalize text-3xl font-bold mb-8">Why us?</h2>
+              <p className="mb-4 text-[16px]">
                 People hire us not just because we're good at what we do
                 (spoiler: we are!), but because we bring the 'wow' and 'wow
                 again' to every project. We're the team that believes in making
                 the process as enjoyable as the final product.
               </p>
-              <p className="mb-6">
+              <p className="mb-4 text-[16px]">
                 Imagine us as the life of the party, but at work. People choose
                 us because we're not your typical 'suit and tie' video crew.
                 We're more like your "let's roll up our sleeves and make
                 something amazing" kind of team. We bring that extra spark of
                 excitement to every project.
               </p>
-              <p className="mb-6">
+              <p className="mb-4 text-[16px]">
                 We're the friendly faces who turn your ideas into eye-popping
                 video magic.
               </p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-[16px]">
                 From adding a sprinkle of fun to a dash of creativity, we've got
                 the secret sauce that keeps our clients coming back for more.
                 So, why hire us? Because we're not just your video crew; we're
@@ -507,81 +557,28 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="bg-black text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h3 className="text-5xl font-bold text-center mb-12">
-            Wait! There’s more...
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">✚</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Exceptional Creativity
-              </h4>
-              <p>
-                Clients choose us for our unparalleled creative prowess. We
-                breathe life into ideas, turning them into visually stunning,
-                memorable videos.
-              </p>
+
+          <div className="bg-black text-white pt-8 px-4">
+            <div className="max-w-7xl mx-auto">
+              <h3 className="capitalize text-3xl font-bold text-center mb-8">
+                Wait! There’s more...
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {features.map((item, index) => (
+                  <div key={index} className="more-about-item flex gap-2">
+                    <div>
+                    {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">
+                        {item.title}
+                      </h4>
+                      <p className="text-[14px]">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">🎯</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Proven Track Record
-              </h4>
-              <p>
-                Our portfolio is a testament to our success. We’ve consistently
-                delivered outstanding results, earning the trust of clients time
-                and again.
-              </p>
-            </div>
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">🤝</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Collaborative Approach
-              </h4>
-              <p>
-                We don’t just work for our clients; we work with them. Our
-                collaborative spirit ensures that each project is a true
-                partnership, vision coming to life.
-              </p>
-            </div>
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">💡</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Innovative Solutions
-              </h4>
-              <p>
-                We’re known for pushing boundaries and finding innovative
-                solutions. Clients appreciate our ability to think outside the
-                box and deliver beyond expectations.
-              </p>
-            </div>
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">👥</div>
-              <h4 className="text-xl font-semibold mb-2">Exceptional Team</h4>
-              <p>
-                Our team is a powerhouse of talent, experience, and passion.
-                Clients choose us for the depth of expertise and dedication we
-                bring to every project.
-              </p>
-            </div>
-            <div className="more-about-item text-center">
-              <div className="text-orange-500 text-4xl mb-4">🔍</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Attention to Detail
-              </h4>
-              <p>
-                We obsess over the finer points. Every frame, every edit, every
-                sound is carefully crafted to ensure the highest quality and
-                maximum impact.
-              </p>
-            </div>
-          </div>
-          <div className="text-right mt-4">
-            <span className="text-gray-500">Made in Framer</span>
           </div>
         </div>
       </div>
