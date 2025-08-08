@@ -11,10 +11,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import locationMap from "../Assets/maps/location-4.jpg";
 import map from "../Assets/maps/map.jpg";
-import floor1 from "../Assets/maps/floor-1.jpg";
-import floor2 from "../Assets/maps/floor-2.jpg";
-import floor3 from "../Assets/maps/floor-3.jpg";
-import floor4 from "../Assets/maps/floor-4.jpg";
+import floor1 from "../Assets/maps/MAP-1-new.jpg";
+import floor2 from "../Assets/maps/MAP-2-new.jpg";
+import floor3 from "../Assets/maps/MAP-3-new.jpg";
+import floor4 from "../Assets/maps/MAP-4-new.jpg";
 import backgroundAm3 from "../Assets/fla-6/black-bg.jpg";
 import amyraBanner from "../Assets/amyra/about-banner.jpg";
 import gallery1 from "../Assets/maps/img-1.jpg";
@@ -327,7 +327,7 @@ const SitePlans = () => {
       {/* Hero Banner */}
       <section
         ref={heroRef}
-        className="main-home-section relative h-[80vh] flex items-end justify-start overflow-hidden"
+        className="main-home-section relative h-[100vh] flex items-end justify-start overflow-hidden"
         style={{
           backgroundImage: `url('${amyraBanner}')`,
           backgroundSize: "cover",
@@ -435,26 +435,26 @@ const SitePlans = () => {
             {floors.map((floor, index) => (
               <div
                 key={index}
-                className="floor-section bg-white overflow-hidden flex flex-col md:flex-row"
+                className="floor-section w-full bg-white overflow-hidden flex flex-col md:flex-row"
               >
-                <div className="md:w-1/2 p-4 flex items-center justify-center">
+                <div className="md:w-[90%] h-[100vh] p-4 flex items-center justify-center">
                   <div className="relative">
                     <img
                       src={floor.image}
                       alt="Family dining together"
-                      className="w-full lg:h-[100vh] h-[52vh] object-contain"
+                      className="w-full lg:h-[100%] h-[52vh] object-contain"
                     />
                   </div>
                 </div>
-                <div className="md:w-1/2 lg:p-12 p-4 flex flex-col justify-center">
+                <div className="md:w-[35%] lg:p-4 p-3 flex flex-col justify-center">
                   <h3 className="capitalize text-[18px] lg:text-[25px] font-bold text-black-800 mb-0">
                     {floor.title}
                   </h3>
-                  <h4 className="text-[35px] lg:text-[45px] font-semibold">
+                  <h4 className="text-[35px] lg:text-[40px] font-semibold">
                     {floor.subTitle}
                   </h4>
-                  <div className="inline-block bg-black-100 text-black-800 mt-8 px-4 py-2 rounded-full font-medium">
-                    <ul className="list-none lg:w-[55%] w-[100%]">
+                  <div className="inline-block bg-black-100 text-black-800 mt-8 px-2 py-2 rounded-full font-medium">
+                    <ul className="list-none lg:w-[100%] w-[100%]">
                       <li className="text-lg flex justify-between">
                         <b>Super Area </b> {floor.superArea}
                       </li>
@@ -625,7 +625,7 @@ const SitePlans = () => {
 
       {/* siteplan proof */}
       <div>
-        <div className="w-full grid lg:grid-cols-2 items-center m-0">
+        <div className="w-full grid lg:grid-cols-2  items-center m-0">
           {/* Left -Map Image*/}
           <div className="flex justify-center items-center h-full p-0 m-0">
             <img
@@ -636,12 +636,12 @@ const SitePlans = () => {
           </div>
 
           {/* Right -  Location Cards  */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:p-12 p-6 gap-1 md:gap-2 bg-[#612831] ">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:p-12 p-6 gap-1 md:gap-2 bg-[#612831] h-full">
             <div
               ref={sitePlanTitleRef}
               className="w-full flex flex-col m-0 pb-[20px] px-4"
             >
-              <h2 className="2xl:text-[40px] xl:text-[36px] lg:text-[33px] md:text-[30px] text-[25px] text-white font-bold leading-snug mb-[20px]">
+              <h2 className="2xl:text-[40px] xl:text-[36px] lg:text-[33px] md:text-[30px] text-[25px] text-white font-bold leading-snug mb-[20px] capitalize">
                 A NEW MARVEL IN THE VICINITY OF GREATER MOHALI
               </h2>
             </div>

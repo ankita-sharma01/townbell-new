@@ -24,7 +24,7 @@ import img2 from "../Assets/fla-6/exterio-2.jpg";
 import img3 from "../Assets/fla-6/exterio-3.jpg";
 import img4 from "../Assets/fla-6/exterio-4.jpg";
 import img5 from "../Assets/fla-6/exterio-5.jpg";
-import video from "../Assets/Media/Amayra-Trillium.mp4";
+import video from "../Assets/Media/Amayra-Trillium-New.mp4";
 import icon1 from "../Assets/fla-6/icon-1.png";
 import icon2 from "../Assets/fla-6/icon-2.png";
 import icon3 from "../Assets/fla-6/icon-3.png";
@@ -57,7 +57,7 @@ const HomePage = () => {
       image: port4,
     },
   ]);
-  const [setCurrentSlide] = useState(0);
+  const [currentSlide,setCurrentSlide] = useState(0);
 
   const images = [joy1, joy2, joy3, joy4, joy5, joy6];
   const slideImages = [
@@ -274,7 +274,7 @@ const HomePage = () => {
       <div className="main-home-section relative">
         <div
           id="top"
-          className="hero w-full md:h-[120vh] h-[100vh] flex flex-col items-center justify-start relative"
+          className="hero w-full md:h-[130vh] h-[100vh] flex flex-col items-center justify-start relative"
         >
           <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] xl:mt-[170px] lg:mt-[160px] md:mt-[137px] mt-[150px]">
             Your Trusted Real Estate

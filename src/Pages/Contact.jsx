@@ -55,30 +55,30 @@ const Contact = () => {
 
       {/* Contact Information */}
       <section className="py-10 px-4">
-        <div className="max-w-7xl mx-auto border border-[#333] p-8 md:p-10 grid md:grid-cols-2 gap-10">
+        <div className="max-w-7xl mx-auto border border-[#727272] rounded-2xl p-8 md:p-10 grid md:grid-cols-2 gap-10">
           {/* Left - Contact Info */}
           <div className="space-y-6">
             <h2 className="capitalize text-xl md:text-2xl font-bold mb-4">Visit us</h2>
-            <div className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-black-500 mt-1 text-xl" />
+            <div className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-black-500 mt-1 text-3xl" />
               <p className="text-[16px] font-semibold leading-6">
                 123 Studio Street, Filmmaker's Haven, Cityville, USA
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <FaClock className="text-black-500 mt-1 text-xl" />
+            <div className="flex items-center gap-3">
+              <FaClock className="text-black-500 mt-1 text-3xl" />
               <p className="text-[16px] font-semibold leading-6">
                 Monday – Friday, 9:00 AM – 6:00 PM
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <FaEnvelope className="text-black-500 mt-1 text-xl" />
+            <div className="flex items-center gap-3">
+              <FaEnvelope className="text-black-500 mt-1 text-3xl" />
               <p className="text-[16px] font-semibold  leading-6">
                 info@storystreamvideos.com
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <FaPhoneAlt className="text-black-500 mt-1 text-xl" />
+            <div className="flex items-center gap-3">
+              <FaPhoneAlt className="text-black-500 mt-1 text-3xl" />
               <p className="text-[16px] font-semibold  leading-6">(123) 456-7890</p>
             </div>
           </div>

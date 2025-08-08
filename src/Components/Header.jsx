@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import siteLogo from "../Assets/TownLogo/logo.png";
+import siteLogo from "../Assets/logo100.png";
 import { RxCross1 } from "react-icons/rx";
 import { FaInstagram ,FaYoutube} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -90,11 +90,11 @@ const NavLink = styled.a`
 `;
 
 const Social = styled.div`
-  margin: 2rem 0;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
 
   svg {
@@ -113,13 +113,8 @@ const Logo = styled.div`
   text-align: center;
   cursor: pointer;
   img {
-    width: 125px;
+    width: 100px;
     height: auto;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
      
   }
 `;
@@ -140,6 +135,7 @@ const FullscreenNav = styled.nav`
   padding-top: 100px;
   padding-bottom: 40px;
   z-index: 99998;
+  gap: 80px;
 
   /* Initial state (hidden) */
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -213,7 +209,7 @@ const Header = () => {
             src={siteLogo}
             alt="Skytouch Logo"
             onClick={() => navigate("/")}
-            className="2xl:w-[125px] lg:w-[125px] md:w-[80px] w-[80px]"
+            className="2xl:w-[100px] lg:w-[100px] md:w-[80px] w-[80px]"
           />
         </Logo>
 

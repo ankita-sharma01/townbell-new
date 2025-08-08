@@ -301,44 +301,6 @@ const About = () => {
           </div>
 
           <div className="about-content w-[95%] lg:w-[67%] flex flex-col gap-[15px] lg:gap-[20px]">
-            <div className="max-w-xl flex items-center justify-between">
-              <div>
-                <img
-                  src={aboutIcon1}
-                  alt="Team Member"
-                  className="w-16 h-16 rounded-full"
-                />
-                <p className="font-bold">
-                  Visionary
-                  <br />
-                  Creations Award
-                </p>
-              </div>
-              <div>
-                <img
-                  src={aboutIcon2}
-                  alt="Team Member"
-                  className="w-16 h-16 rounded-full"
-                />
-                <p className="font-bold">
-                  CineMasters
-                  <br />
-                  Excellence
-                </p>
-              </div>
-              <div>
-                <img
-                  src={aboutIcon3}
-                  alt="Team Member"
-                  className="w-16 h-16 rounded-full"
-                />
-                <p className="font-bold">
-                  ReelGenius
-                  <br />
-                  Award
-                </p>
-              </div>
-            </div>
             <h2 className="font-['Inter'] text-[28px] md:text-[32px] text-[#00000080] font-light leading-[1.2em] tracking-[-1.5px] md:tracking-[-3px]">
               Established in 2015, we have dedicated ourselves to{" "}
               <span className="text-black">
@@ -357,6 +319,44 @@ const About = () => {
               endeavor with creativity, enthusiasm, and a commitment to
               exceeding our clients' expectations.
             </p>
+            <div className="max-w-xl flex items-center justify-between">
+              <div>
+                <img
+                  src={aboutIcon1}
+                  alt="Team Member"
+                  className="w-[9rem] h-auto rounded-full"
+                />
+                <p className="font-bold text-center">
+                  Visionary
+                  <br />
+                  Creations Award
+                </p>
+              </div>
+              <div>
+                <img
+                  src={aboutIcon2}
+                  alt="Team Member"
+                  className="w-[9rem] h-auto rounded-full"
+                />
+                <p className="font-bold text-center">
+                  CineMasters
+                  <br />
+                  Excellence
+                </p>
+              </div>
+              <div>
+                <img
+                  src={aboutIcon3}
+                  alt="Team Member"
+                  className="w-[9rem] h-auto rounded-full"
+                />
+                <p className="font-bold text-center">
+                  ReelGenius
+                  <br />
+                  Award
+                </p>
+              </div>
+            </div>
             <div className="counts w-full flex items-center justify-center lg:justify-start flex-wrap mt-[0px] lg:mt-[40px]">
               <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
                 <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
@@ -470,48 +470,20 @@ const About = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="border border-black p-3 overflow-hidden flex flex-col items-center text-center"
+              className="border border-[#727272] p-3 overflow-hidden flex flex-col items-center text-center"
             >
               <img
                 src={member.image}
                 alt={member.name}
                 className="w-full h-[300px] object-cover"
               />
-              <div className="pt-4 w-full">
-                <h3 className="text-[18px] font-bold leading-1.5">
+              <div className="pt-4 w-full flex justify-between items-center">
+                <h3 className="capitalize text-[18px] font-bold leading-1.5">
                   {member.name}
                 </h3>
-                <p className="text-[14px] text-[#999] tracking-wide mt-1 uppercase">
+                <p className="capitalize text-[13px] text-[#999] tracking-wide mt-1">
                   {member.role}
                 </p>
-
-                <div className="mt-4 w-full space-y-3">
-                  <a
-                    href={member.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full bg-[#ffffff] border border-black text-sm py-3 px-4 hover:bg-[#b9b9b9c0] hover:border-white transition"
-                  >
-                    <div className="flex items-center gap-2">
-                      <FaFacebookF />
-                      <span>Facebook</span>
-                    </div>
-                    <ArrowUpRight size={16} />
-                  </a>
-
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full bg-[#ffffff] border border-black text-sm py-3 px-4 hover:bg-[#b9b9b9c0] hover:border-white transition"
-                  >
-                    <div className="flex items-center gap-2">
-                      <FaLinkedinIn />
-                      <span>LinkedIn</span>
-                    </div>
-                    <ArrowUpRight size={16} />
-                  </a>
-                </div>
               </div>
             </div>
           ))}
@@ -520,7 +492,7 @@ const About = () => {
 
       {/* Section 4 : Why us?  --------------------------black */}
       <div className="bg-black text-white py-10 px-4">
-        <div className="max-w-7xl mx-auto border border-white  p-10">
+        <div className="max-w-7xl mx-auto border border-[#e9e9e9cc]  p-10">
           <div class className="flex flex-col md:flex-row justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <img
@@ -566,9 +538,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {features.map((item, index) => (
                   <div key={index} className="more-about-item flex gap-2">
-                    <div>
-                    {item.icon}
-                    </div>
+                    <div className="mt-[3px]">{item.icon}</div>
                     <div>
                       <h4 className="text-xl font-semibold mb-2">
                         {item.title}
