@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import living from "../Assets/about/contact-banner-new.jpg";
+import living from "../Assets/about/contact-bann-new.jpg";
 import {
   FaMapMarkerAlt,
   FaClock,

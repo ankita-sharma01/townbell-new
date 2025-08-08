@@ -655,10 +655,10 @@ const SitePlans = () => {
               <div
                 key={idx}
                 ref={addToLocationCardsRef}
-                className="group relative flex flex-col items-start p-4 text-white transition-shadow duration-300"
+                className="group relative flex flex-col items-start p-0 text-white transition-shadow duration-300"
               >
                 {/* Content container */}
-                <div className="flex w-full relative z-10 items-center gap-4 border border-[#612831] hover:border-[#ccc] hover:rounded-2xl p-3 cursor-pointer">
+                <div className="flex w-full relative z-10 items-center gap-4 border border-[#612831] hover:border-[#ccc] hover:rounded-2xl p-4 cursor-pointer">
                   <div className="w-10 h-10 flex items-center justify-center text-black-600 duration-300">
                     {item.icon}
                   </div>
