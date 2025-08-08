@@ -667,7 +667,7 @@ const SitePlans = () => {
                       {item.title} {item.time}
                     </h3>
                   </div>
-                </div>
+                </div>   
               </div>
             ))}
           </div>
