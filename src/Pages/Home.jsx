@@ -33,10 +33,9 @@ import icon4 from "../Assets/fla-6/icon-4.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
-  const blogCardsRef = useRef([]);
   const headingRef = useRef(null);
   const imageScrollRef = useRef(null);
-  const [portfolioItems, setPortfolioItems] = useState([
+  const [portfolioItems] = useState([
     {
       title: "GreenWaves",
       subtitle: "Eco-Warriors",
@@ -58,7 +57,7 @@ const HomePage = () => {
       image: port4,
     },
   ]);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [setCurrentSlide] = useState(0);
 
   const images = [joy1, joy2, joy3, joy4, joy5, joy6];
   const slideImages = [
@@ -222,7 +221,6 @@ const HomePage = () => {
   useEffect(() => {
     // Setup for the Grand Vision auto-scrolling image strip
     if (window.matchMedia("(min-width: 100px)").matches) {
-      const container = document.querySelector(".scrolling-container");
       const scrollContent = document.querySelector(".scrolling-content");
 
       // Calculate total width
@@ -433,7 +431,7 @@ const HomePage = () => {
           {/* Horizontal Scrolling Image Strip */}
           <div className="horizontal-cards w-[95%] md:w-full flex items-center justify-center lg:justify-[unset] flex-col lg:flex-row gap-[15px] lg:gap-[50px] lg:translate-x-[60vw]">
             {portfolioItems.map((item, index) => (
-              <a href="#" key={index}>
+              <a href="/" key={index}>
                 <div className="card lg:w-[650px] md:w-[450px] w-[95%] md:h-[370px] h-[260px] rounded-[2px] relative overflow-hidden">
                   <img
                     className="w-full h-full object-cover object-center"

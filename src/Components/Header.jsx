@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import siteLogo from "../Assets/TownLogo/logo.png";
 import { RxCross1 } from "react-icons/rx";
-import { IoReorderTwoOutline } from "react-icons/io5";
-import { FaFacebook, FaInstagram ,FaYoutube} from "react-icons/fa";
+import { FaInstagram ,FaYoutube} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { GoArrowUpRight } from "react-icons/go";
 import { IoIosMenu } from "react-icons/io";
@@ -252,12 +251,12 @@ const Header = () => {
           <hr
             style={{ width: "100px", borderColor: "rgba(255,255,255,0.3)" }}
           />
-          <NavLink href="https://www.instagram.com/town_bell/?hl=en" target='_blank'>
+          <NavLink href="https://www.instagram.com/town_bell/?hl=en" target='_blank' rel="noopener noreferrer">
             <i className="fab fa-instagram">
               <FaInstagram />
             </i>
           </NavLink>
-          <NavLink href="https://www.youtube.com/@Town-Bell" target='_blank'>
+          <NavLink href="https://www.youtube.com/@Town-Bell" target='_blank' rel="noopener noreferrer">
             <i className="fab fa-facebook-f">
               <FaYoutube />
             </i>

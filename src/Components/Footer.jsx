@@ -22,7 +22,7 @@ const Footer = () => {
             </h2>
     
               <div className="footer-bottom w-[95%] lg:w-full flex flex-wrap gap-[10px]">
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://x.com/Townbell1" target='_blank'>
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://x.com/Townbell1" target='_blank' rel="noopener noreferrer">
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaTwitter />
               Twitter
@@ -32,7 +32,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.linkedin.com/company/town-bell/?viewAsMember=true" target='_blank'>
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.linkedin.com/company/town-bell/?viewAsMember=true" target='_blank' rel="noopener noreferrer">
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaLinkedin />
               Linkedin
@@ -42,7 +42,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.youtube.com/@Town-Bell" target='_blank'>
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.youtube.com/@Town-Bell" target='_blank'  rel="noopener noreferrer">
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaYoutube />
               Youtube
@@ -52,7 +52,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.instagram.com/town_bell/?hl=en" target='_blank'>
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.instagram.com/town_bell/?hl=en" target='_blank' rel="noopener noreferrer">
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaInstagram />
               Instagram
@@ -74,13 +74,13 @@ const Footer = () => {
           © {new Date().getFullYear()} Townbell. All rights reserved.
         </p>
         <div className="flex items-center gap-[20px]">
-          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="#">
+          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="/">
             Privacy Policy
           </a>
-          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="#">
+          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="/">
             Terms of Service
           </a>
-          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="#">
+          <a className="inter text-[12px] text-[#ffffff99] hover:text-[#ed991d] font-light leading-[1em]" href="/">
             Cookie Policy
           </a>
         </div>
