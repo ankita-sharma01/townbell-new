@@ -17,8 +17,8 @@ const Footer = () => {
             alt="townbell"
           />
           <div className="w-full flex flex-col items-center p-[18px] md:px-[58px] md:py-[47px] border-[1px] border-solid border-[#ffffff4d] rounded-[40px] bg-[#ffffff0a]">
-            <h2 className="archivo text-[30px] mb-2 md:text-[40px] lg:text-[60px] text-white font-bold leading-[1em] text-center w-[100%] lg:w-[80%]">
-              Your Trusted Real Estate Builder in Tricity
+            <h2 className="archivo text-[30px] mb-2 md:text-[35px] lg:text-[45px] text-white font-bold leading-[1em] text-center w-[100%] lg:w-[80%]">
+              Where Dreams Rise—Your Trusted Builder in Tricity. Let’s Connect!
             </h2>
     
               <div className="footer-bottom w-[95%] lg:w-full flex flex-wrap gap-[10px]">

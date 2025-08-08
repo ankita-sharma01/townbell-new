@@ -10,13 +10,13 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import locationMap from "../Assets/maps/location-4.jpg";
-import map from "../Assets/maps/map.jpg";
+import map from "../Assets/about/site-plan-img.jpg";
 import floor1 from "../Assets/maps/MAP-1-new.jpg";
 import floor2 from "../Assets/maps/MAP-2-new.jpg";
 import floor3 from "../Assets/maps/MAP-3-new.jpg";
 import floor4 from "../Assets/maps/MAP-4-new.jpg";
 import backgroundAm3 from "../Assets/fla-6/black-bg.jpg";
-import amyraBanner from "../Assets/amyra/about-banner.jpg";
+import amyraBanner from "../Assets/about/amayra-trilium-banner.jpg";
 import gallery1 from "../Assets/maps/img-1.jpg";
 import gallery2 from "../Assets/maps/img-2.jpg";
 import gallery3 from "../Assets/maps/img-3.jpg";
@@ -327,11 +327,12 @@ const SitePlans = () => {
       {/* Hero Banner */}
       <section
         ref={heroRef}
-        className="main-home-section relative h-[100vh] flex items-end justify-start overflow-hidden"
+        className="main-home-section relative h-[100dvh] flex items-end justify-start overflow-hidden"
         style={{
           backgroundImage: `url('${amyraBanner}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          overflow: "hidden",
         }}
       >
         <div className="text-left z-10 px-4 pb-[40px]">
@@ -345,17 +346,20 @@ const SitePlans = () => {
 
       {/* map section */}
       <div className="bg-white p-[40px] gap-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
           {/* Left - Location Cards */}
-          <div className="max-w-7xl grid lg:grid-cols-1 gap-1 items-top">
-            <div>
+          <div className="max-w-7xl flex flex-col gap-1 items-top">
+            <div className="flex justify-between items-center">
               <h2
                 ref={mapSectionTitleRef}
                 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-semibold leading-snug mb-[10px]"
               >
                 A Home Of Comfort
               </h2>
-              <p ref={mapSectionTextRef} className="pb-[20px] font-medium ">
+              <p
+                ref={mapSectionTextRef}
+                className="lg:w-1/2 w-full pb-[20px] font-medium "
+              >
                 Step inside a space where comfort meets elegance, and every
                 detail speaks of refined living. Thoughtfully designed interiors
                 offer a seamless blend of style and functionality — from airy
@@ -365,32 +369,7 @@ const SitePlans = () => {
                 that feels both luxurious and deeply personal.
               </p>
             </div>
-            <div>
-              <h5
-                ref={amenitiesTitleRef}
-                className="capitalize text-[20px] md:text-[25px] font-medium"
-              >
-                Legends
-              </h5>
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
-                {amenitiesList.map((item, idx) => (
-                  <div
-                    key={idx}
-                    ref={addToAmenitiesListRef}
-                    className="group relative pl-0 py-[10px]  overflow-hidden"
-                  >
-                    <div className="relative z-10 flex items-center justify-start gap-1 mb-0">
-                      <p className="capitalize text-black-500 text-sm font-semibold transition-colors duration-300">
-                        <b className="text-black-700 text-[22px] pr-[10px]">
-                          {item.number}
-                        </b>{" "}
-                        {item.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <div className="w-[90%] text-center h-[0.5px] bg-[#ccc] mx-auto mb-2"></div>
           </div>
 
           {/* Right - Map Image */}
@@ -404,6 +383,32 @@ const SitePlans = () => {
               alt="Location Map"
               className="mx-auto"
             />
+            <div>
+              <h5
+                ref={amenitiesTitleRef}
+                className="capitalize text-left text-[35px] md:text-[45px] mb-2 font-bold"
+              >
+                Amenities Map Key
+              </h5>
+              <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
+                {amenitiesList.map((item, idx) => (
+                  <div
+                    key={idx}
+                    ref={addToAmenitiesListRef}
+                    className="group relative pl-0 py-[10px]  overflow-hidden"
+                  >
+                    <div className="relative z-10 flex items-center justify-start gap-1 mb-0 leading-[40px]">
+                      <p className="capitalize text-black-500 text-[16px] font-semibold flex items-center transition-colors duration-300 my-1">
+                        <b className="text-black-700 lg:text-[45px] text-[35px] pr-[10px]">
+                          <i>{item.number}</i>
+                        </b>{" "}
+                        {item.label}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -421,7 +426,9 @@ const SitePlans = () => {
         <div className="w-full lg:px-4 px-2 p-[20px] lg:p-[40px]">
           <div className="w-full flex mb-7 justify-between items-center lg:flex-row flex-col">
             <div className="flex flex-col">
-              <p className="lg:text-3xl text-lg text-black font-semibold">FLOOR PLANS</p>
+              <p className="lg:text-3xl text-lg text-black font-semibold">
+                FLOOR PLANS
+              </p>
               <h2 className="capitalize 2xl:text-[65px] xl:text-[55px] lg:text-[55px] md:text-[45px] text-[35px] font-bold text-black-900 mb-4">
                 The Proof Is In <br /> Our Portfolio
               </h2>
@@ -495,15 +502,14 @@ const SitePlans = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <h2 className="text-2xl text-center md:text-3xl font-bold pb-2">
+            <h2 className="text-2xl text-left md:text-3xl font-bold border-b border-[#cccccc42] pb-5">
               Key Project Highlights:
             </h2>
-            <div className="w-[50%] text-center h-[2px] bg-yellow-500 mx-auto mb-6"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 lg:mt-16 mt-6 text-sm md:text-base">
               {/* Left Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsLeft.map((item, idx) => (
-                  <li className="marker:text-yellow-500" key={idx}>
+                  <li className="marker:text-white-500" key={idx}>
                     {item}
                   </li>
                 ))}
@@ -512,7 +518,7 @@ const SitePlans = () => {
               {/* Right Column */}
               <ul className="space-y-2 list-disc list-inside">
                 {highlightsRight.map((item, idx) => (
-                  <li className="marker:text-yellow-500" key={idx}>
+                  <li className="marker:text-white-500" key={idx}>
                     {item}
                   </li>
                 ))}
@@ -544,7 +550,7 @@ const SitePlans = () => {
               moment becomes a lasting memory.
             </span>
           </div>
-          <div className="w-[90%] text-center h-[0.5px] bg-[#ffffff75] mx-auto mb-2"></div>
+          <div className="2xl:w-[100%] w-[90%] text-center h-[0.5px] bg-[#ffffff75] mx-auto mb-2"></div>
           <div className="flex flex-col lg:gap-4 gap-2  lg:max-w-[30%] max-w-[29%] mt-[50px]">
             <div className="relative w-full">
               <img
@@ -652,7 +658,7 @@ const SitePlans = () => {
                 className="group relative flex flex-col items-start p-4 text-white transition-shadow duration-300"
               >
                 {/* Content container */}
-                <div className="flex relative z-10 items-center gap-4">
+                <div className="inline-flex relative z-10 items-center gap-4 border-2 border-[#612831] hover:border-2 hover:border-[#ffffff] hover:rounded-2xl p-3">
                   <div className="w-10 h-10 flex items-center justify-center text-black-600 duration-300">
                     {item.icon}
                   </div>

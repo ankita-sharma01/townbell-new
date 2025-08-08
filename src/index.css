@@ -4,15 +4,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h2{
-  font-size:62px;
-  line-height:68px;
-  text-transform: uppercase;
+
+@media only screen and (min-width : 1030px) and (max-width:1366px) {
+
+  h2{
+    font-size:52px;
+    line-height:58px;
+  }
+
 }
 h3{
   font-size:25px;
   line-height:28px;
-  text-transform: uppercase;
 }
 h4{
   font-size:14px;

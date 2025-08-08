@@ -100,18 +100,18 @@ header .links button:hover {
   background: #000 url(../src/Assets/home-banner-img.jpg);
   background-size: cover;
   position: relative;
-  top: 0px;
+  top: 30px;
   z-index: 1;
-  background-position: center;
-
+  background-position: top;
+  overflow: hidden;
 }
 .main-home-section{
   margin-top:-114px;
 }
 
-.hero h1 {
+/* .hero h1 {
     align-items: center;
-    background: url(../src/Assets/banner-title-bg.png);
+  
     background-size: cover;
     color: #fff;
     display: flex;
@@ -122,6 +122,20 @@ header .links button:hover {
     text-align: center;
     justify-content: center;
     background-position: top top;
+} */
+.hero h1 {
+    align-items: center;
+     background: url(../src/Assets/banner-title-bg.png);
+    background-position: top top;
+    background-size: 100%;
+    color: #fff;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    text-align: center;
+    transform-origin: top top;
+    width: auto;
+    background-repeat: no-repeat;
 }
 .bannerb{
     background: url(../src/Assets/fla-6/black-bg.jpg);

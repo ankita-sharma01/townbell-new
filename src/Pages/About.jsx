@@ -2,13 +2,11 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import float from "../Assets/amyra/float-logo.png";
-import living from "../Assets/about/about-banner.jpg";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { ArrowUpRight } from "lucide-react";
-import team1 from "../Assets/about/team1.avif";
+import living from "../Assets/about/about-trilium-banner.jpg";
+import team1 from "../Assets/about/why-chs-img.jpg";
+import team2 from "../Assets/about/plac-holder-img.jpg"
 import backgroundLines from "../Assets/about/background-lines.svg";
-import aboutIcon1 from "../Assets/about/award-icon.png";
+import aboutIcon1 from "../Assets/about/award-winner-img.jpg";
 import aboutIcon2 from "../Assets/about/award-winner.png";
 import aboutIcon3 from "../Assets/about/award-winner-2.png";
 import {
@@ -27,28 +25,16 @@ const About = () => {
 
   // Initialize animations
   useEffect(() => {
-    // Hero section animations
-    gsap.fromTo(
-      heroRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top bottom",
-        },
-      }
-    );
-
-    // Floating element animation
-    gsap.to(".floating-element", {
-      y: 20,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
+    // Hero section animation
+    gsap.from(heroRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: "top bottom",
+        toggleActions: "play none none none",
+      },
     });
 
     // Section content fade-up animations
@@ -207,55 +193,52 @@ const About = () => {
     {
       name: "John Davis",
       role: "Creative Director",
-      image: team1, // Replace with correct image path
-      facebook: "#",
-      linkedin: "#",
+      image: team2, // Replace with correct image path
+      
     },
     {
       name: "Michael Carter",
       role: "Cinematographer",
-      image: team1,
-      facebook: "#",
-      linkedin: "#",
+      image: team2,
+     
     },
     {
       name: "David Smith",
       role: "Video Editor",
-      image: team1,
-      facebook: "#",
-      linkedin: "#",
+      image: team2,
+     
     },
   ];
   const features = [
     {
       icon: <FaPlus className="text-white-500 text-2xl mb-4" />,
-      title: "Exceptional Creativity",
-      desc: "Clients choose us for our unparalleled creative prowess. We breathe life into ideas, turning them into visually stunning, memorable videos.",
+      title: "Future-Ready Design",
+      desc: "Our developments are built with evolving urban lifestyles in mind.",
     },
     {
       icon: <FaBullseye className="text-white-500 text-2xl mb-4" />,
-      title: "Proven Track Record",
-      desc: "Our portfolio is a testament to our success. We’ve consistently delivered outstanding results, earning the trust of clients time and again.",
+      title: "Advanced Construction",
+      desc: "Using modern technologies like Mivan formwork for stronger, safer structures.",
     },
     {
       icon: <FaHandshake className="text-white-500 text-2xl mb-4" />,
-      title: "Collaborative Approach",
-      desc: "We don’t just work for our clients; we work with them. Our collaborative spirit ensures that each project is a true partnership, vision coming to life.",
+      title: "Essential Conveniences On-Site",
+      desc: "Retail, parking, and basic services are all integrated into our community planning.",
     },
     {
       icon: <FaLightbulb className="text-white-500 text-2xl mb-4" />,
-      title: "Innovative Solutions",
-      desc: "We’re known for pushing boundaries and finding innovative solutions. Clients appreciate our ability to think outside the box and deliver beyond expectations.",
+      title: "Uninterrupted Utilities",
+      desc: "24/7 power backup and water supply make life seamless.",
     },
     {
       icon: <FaUsers className="text-white-500 text-2xl mb-4" />,
-      title: "Exceptional Team",
-      desc: "Our team is a powerhouse of talent, experience, and passion. Clients choose us for the depth of expertise and dedication we bring to every project.",
+      title: "Peaceful Surroundings",
+      desc: "Enjoy the benefits of urban access without sacrificing natural calm.",
     },
     {
       icon: <FaSearch className="text-white-500 text-2xl mb-4" />,
-      title: "Attention to Detail",
-      desc: "We obsess over the finer points. Every frame, every edit, every sound is carefully crafted to ensure the highest quality and maximum impact.",
+      title: "Value-Driven Living",
+      desc: "Whether for personal use or investment, every square foot is designed for long-term value.",
     },
   ];
 
@@ -263,28 +246,19 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Banner */}
       <section
-        className="main-home-section relative w-full h-[100vh] flex items-center justify-center overflow-hidden"
+        ref={heroRef}
+        className="main-home-section relative h-[100dvh] flex items-end justify-start overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${living})`,
+          backgroundImage: `url(${living})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           overflow: "hidden",
         }}
-        ref={heroRef}
       >
-        <div className="h-screen flex flex-col justify-center item-center text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+        <div className="h-screen flex flex-col justify-end item-center text-center z-10 px-4">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8">
             About Us
           </h1>
-
-          {/* Floating Element */}
-          <div className="floating-element max-w-md">
-            <img
-              className="w-60 mx-auto h-auto mb-4"
-              src={float}
-              alt="amayra"
-            />
-          </div>
         </div>
       </section>
 
@@ -296,28 +270,28 @@ const About = () => {
         <div className="w-[95%] max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start z-50 gap-[25px] lg:gap-0">
           <div className="concept-heading w-[95%] h-full lg:w-[33%] flex flex-col md:flex-row lg:flex-col justify-between items-center md:items-start relative">
             <h2 className="capitalize xl:text-[50px] lg:text-[55px] text-[30px] font-bold leading-[1.2em] lg:sticky top-[50px] mb-7 lg:mb-[100px]">
-              About <br /> Our Agency
+              Crafting Landmarks,
+              <br /> Building Trust
             </h2>
           </div>
 
           <div className="about-content w-[95%] lg:w-[67%] flex flex-col gap-[15px] lg:gap-[20px]">
-            <h2 className="font-['Inter'] text-[28px] md:text-[32px] text-[#00000080] font-light leading-[1.2em] tracking-[-1.5px] md:tracking-[-3px]">
-              Established in 2015, we have dedicated ourselves to{" "}
-              <span className="text-black">
-                crafting captivating visual narratives
-              </span>{" "}
-              defined by creativity, innovation, and an unwavering commitment to{" "}
-              <span className="text-black">
-                excellence in video production.
-              </span>
+            <h2 className="text-[16px] md:text-[20px] font-normal text-[#000000] leading-[1.2em] ">
+              Welcome to Townbell India Landcraft Private Limited— where vision
+              meets craftsmanship and every project reflects our commitment to
+              thoughtful, future-ready living. As one of the emerging names in
+              North India’s real estate space, we pride ourselves on delivering
+              premium developments that blend smart planning, quality
+              construction, and lifestyle-rich amenities.
             </h2>
-            <p className="font-['Inter'] text-[17px] text-[#000000cc] font-light leading-[1.4em]">
-              Our mission is clear: to transform ideas into compelling visual
-              stories. We believe that every project is an opportunity to create
-              something extraordinary. Whether it's a corporate video, a
-              commercial, an event coverage, or an animation, we approach each
-              endeavor with creativity, enthusiasm, and a commitment to
-              exceeding our clients' expectations.
+            <p className="text-[22px] text-[#000000cc] font-light leading-[1.1em]">
+              From vibrant residential communities to integrated townships and
+              commercial spaces, our focus remains on creating environments that
+              enhance life—not just house it. Strategically located projects,
+              efficient layouts, modern infrastructure, and timely delivery form
+              the foundation of every Townbell development. Whether you’re
+              buying your first home or expanding your portfolio, you can trust
+              us to deliver long-term value with a personal touch.
             </p>
             <div className="max-w-xl flex items-center justify-between">
               <div>
@@ -357,58 +331,21 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="counts w-full flex items-center justify-center lg:justify-start flex-wrap mt-[0px] lg:mt-[40px]">
-              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
-                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
-                  15+
-                </h3>
-                <p className="w-full text-[17px] font-bold uppercase">
-                  Years of experience
-                </p>
-              </div>
-
-              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
-                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
-                  200+
-                </h3>
-                <p className="  w-full text-[17px] font-bold uppercase">
-                  Repeated Clients
-                </p>
-              </div>
-
-              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
-                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
-                  478
-                </h3>
-                <p className="  w-full text-[17px] font-bold uppercase">
-                  Completed Projects
-                </p>
-              </div>
-
-              <div className="count-box w-full md:w-[40%] flex flex-col items-center justify-center relative p-8">
-                <h3 className="lg:text-[80px] md:text-[70px] text-[60px] text-[#000000] font-bold leading-[100px]">
-                  350+
-                </h3>
-                <p className="  w-full text-[17px] font-bold uppercase">
-                  Happy Clients
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Section 2: Our values-----------------------black */}
       <div
-        className="bg-black text-white min-h-screen py-10 px-4"
+        className="bg-black text-white min-h-screen py-11 px-4"
         style={{
           backgroundImage: `url(${backgroundLines})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <h2 className="max-w-4xl capitalize xl:text-[35px] lg:text-[32px] md:text-[30px] text-[28px] font-bold text-center mb-8 b-2 mx-auto">
-          Our Values: The Secret Sauce in Every StoryStream Creation!
+        <h2 className="max-w-5xl capitalize xl:text-[35px] lg:text-[32px] md:text-[30px] text-[28px] font-bold text-center mb-8 b-2 mx-auto leading-[45px]">
+          Our Core Values <br/>The Heart of Every Townbell Project
         </h2>
         <div className="grid md:grid-cols-1 grid-cols-2  gap-8 max-w-4xl mx-auto">
           <div className="value-card flex flex-col mb-8 lg:mr-[260px] md:mr-[200px] mr-[100px]">
@@ -416,9 +353,8 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-2">Creativity</h2>
               <p className="text-gray-400">
-                We believe in the power of imagination and creative thinking. We
-                strive to infuse innovation and originality into everything we
-                do, producing unique and captivating video content.
+                We approach each project with fresh ideas, design innovation,
+                and a deep understanding of how people live, work, and connect.
               </p>
             </div>
           </div>
@@ -427,9 +363,9 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-2">Quality</h2>
               <p className="text-gray-400">
-                Excellence is non-negotiable. We are committed to delivering
-                top-notch video production services that meet and exceed our
-                clients' expectations, from concept to final product.
+                We’re committed to high standards in every brick laid—from
+                materials to execution—ensuring durability, elegance, and
+                performance.
               </p>
             </div>
           </div>
@@ -438,9 +374,9 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-2">Collaboration</h2>
               <p className="text-gray-400">
-                We value teamwork and collaboration. We work closely with our
-                clients, understanding their vision and goals, to ensure that
-                every project is a true collaboration resulting in success.
+                AtTownbell, we believe success is shared. We work closely with
+                customers, partners, and communities to build with purpose and
+                unity.
               </p>
             </div>
           </div>
@@ -449,10 +385,8 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-2">Integrity</h2>
               <p className="text-gray-400">
-                Trust and honesty are at the heart of our agency. We maintain
-                the highest ethical standards in all our interactions, ensuring
-                transparency, reliability, and long-lasting relationships with
-                our clients and partners.
+                Transparency and trust are the cornerstones of our reputation.
+                We do what we say and deliver what we promise—every time.
               </p>
             </div>
           </div>
@@ -475,7 +409,7 @@ const About = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-[300px] object-cover"
+                className="w-full h-[350px] object-fill"
               />
               <div className="pt-4 w-full flex justify-between items-center">
                 <h3 className="capitalize text-[18px] font-bold leading-1.5">
@@ -503,30 +437,44 @@ const About = () => {
               />
             </div>
             <div className="md:w-1/2 md:pl-12">
-              <h2 className="capitalize text-3xl font-bold mb-8">Why us?</h2>
-              <p className="mb-4 text-[16px]">
-                People hire us not just because we're good at what we do
-                (spoiler: we are!), but because we bring the 'wow' and 'wow
-                again' to every project. We're the team that believes in making
-                the process as enjoyable as the final product.
+              <h2 className="capitalize text-3xl font-bold mb-8">
+                Why Choose Townbell India Landcraft
+              </h2>
+              <b className="block mb-[10px]">• Prime Locations</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                Our projects are carefully placed in rapidly developing,
+                well-connected areas with high future potential.
               </p>
-              <p className="mb-4 text-[16px]">
-                Imagine us as the life of the party, but at work. People choose
-                us because we're not your typical 'suit and tie' video crew.
-                We're more like your "let's roll up our sleeves and make
-                something amazing" kind of team. We bring that extra spark of
-                excitement to every project.
+              <b className="block mb-[10px]">• Smart & Spacious Layouts</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                We design homes that maximize natural light, ventilation, and
+                liveable space for real everyday needs.
               </p>
-              <p className="mb-4 text-[16px]">
-                We're the friendly faces who turn your ideas into eye-popping
-                video magic.
+              
+              <b className="block mb-[10px]">• Amenities That Matter</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                From lifestyle clubs and fitness zones to kids' play areas and
+                wellness spaces—we build more than just walls.
               </p>
-              <p className="text-gray-400 text-[16px]">
-                From adding a sprinkle of fun to a dash of creativity, we've got
-                the secret sauce that keeps our clients coming back for more.
-                So, why hire us? Because we're not just your video crew; we're
-                your partners in making dreams come true!
+
+              <b className="block mb-[10px]">• On-Time Delivery</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                Our team is committed to timelines, ensuring peace of mind and
+                financial reliability for every buyer.
               </p>
+
+             <b className="block mb-[10px]">• Transparent Dealings</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                No hidden clauses. No last-minute surprises. Our communication
+                and pricing are always clear and honest.
+              </p>
+
+              <b className="block mb-[10px]">• Built for Community Living</b>
+              <p className="mb-4 text-gray-400 text-[16px]">
+                Each project is designed to foster a sense of belonging with
+                green areas, shared spaces, and secure environments.{" "}
+              </p>
+
             </div>
           </div>
 
@@ -543,7 +491,7 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-[14px]">{item.desc}</p>
+                      <p className="text-[14px] text-gray-400">{item.desc}</p>
                     </div>
                   </div>
                 ))}

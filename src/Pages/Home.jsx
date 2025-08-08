@@ -57,7 +57,7 @@ const HomePage = () => {
       image: port4,
     },
   ]);
-  const [currentSlide,setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [joy1, joy2, joy3, joy4, joy5, joy6];
   const slideImages = [
@@ -67,10 +67,26 @@ const HomePage = () => {
     // Add more images as needed
   ];
   const boxes = [
-    { title: "Confidence in quality", icon: icon1 },
-    { title: "Clarity in communication", icon: icon2 },
-    { title: "Commitment to timelines", icon: icon3 },
-    { title: "Comfort in living", icon: icon4 },
+    {
+      title: "Quality Construction",
+      icon: icon1,
+      desc: "Every project is built with precision, durability, and attention to detail.",
+    },
+    {
+      title: "On-Time Delivery",
+      icon: icon2,
+      desc: "We value your time and ensure timely possession without compromising quality.",
+    },
+    {
+      title: "Transparent Dealings",
+      icon: icon3,
+      desc: "Clear communication and honest pricing with no hidden surprises.",
+    },
+    {
+      title: "Customer-Centric Approach",
+      icon: icon4,
+      desc: "Your needs drive our design, service, and overall experience.",
+    },
   ];
 
   useEffect(() => {
@@ -274,14 +290,14 @@ const HomePage = () => {
       <div className="main-home-section relative">
         <div
           id="top"
-          className="hero w-full md:h-[130vh] h-[100vh] flex flex-col items-center justify-start relative"
+          className="hero w-full md:h-[130vh] h-[100dvh] flex flex-col items-center justify-start relative"
         >
-          <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] xl:mt-[170px] lg:mt-[160px] md:mt-[137px] mt-[150px]">
+          <h1 className="archivo 2xl:text-[75px] lg:text-[65px] md:text-[50px] text-[30px] font-bold leading-[1em] text-white md:ml-[40px] ml-[20px] 2xl:mt-[200px] xl:mt-[190px] lg:mt-[180px] md:mt-[137px] mt-[150px]">
             Your Trusted Real Estate
             <br /> Builder In Tricity.
           </h1>
         </div>
-        <div className="main-about bg-black text-white py-[40px] px-8 pb-0 md:px-20">
+        <div className="main-about relative bg-black text-white px-8 pb-[40px] z-[9999] md:px-20">
           <div className="about-home flex flex-col md:flex-row justify-between item-center w-full">
             <div className="about-home-content relative text-left">
               <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
@@ -289,18 +305,19 @@ const HomePage = () => {
                 <br /> Town Bell
               </h2>
             </div>
-            <div className="max-w-3xl  lg:text-[18px] md:text-[16px] text-[15px] md:border-l border-0  border-[#494949] md:pl-[40px] pl-0">
-              <p>
-                With a strong legacy of excellence, Town Bell is one of the most
-                reputed and reliable builders in the Tricity region. Backed by
-                years of experience and a proven track record, we have
-                successfully delivered a series of high-quality residential
-                projects that combine smart design, robust construction, and
-                lifestyle-driven amenities.
+            <div className="max-w-3xl  lg:text-[16px] md:text-[16px] text-[15px] md:border-l border-0  border-[#494949] md:pl-[40px] pl-0">
+              <p className="lg:text-[16px] md:text-[16px] text-[15px] ">
+                Town Bell is one of the most trusted and reputed real estate
+                developers in the Tricity region, with a proven track record of
+                delivering quality homes. Combining smart architecture, durable
+                construction, and thoughtfully planned amenities, our projects
+                are designed to offer lasting comfort and value. Backed by years
+                of experience and a strong commitment to excellence, we focus on
+                creating vibrant communities where families can truly thrive.
               </p>
-              <p className="mt-4">
-                At Town Bell, we don’t just build homes—we build communities,
-                relationships, and long-term value for our buyers.
+              <p className="mt-4 lg:text-[16px] md:text-[16px] text-[15px] ">
+                At Town Bell, we don’t just build homes—we build trust,
+                relationships, and spaces that enrich everyday living.
               </p>
             </div>
           </div>
@@ -331,19 +348,20 @@ const HomePage = () => {
         <div className="portfolio w-full flex flex-col items-centersticky top-[0px] left-0 overflow-hidden">
           <div className="about-portfolio flex flex-col md:flex-row justify-between item-center w-full pt-[40px] px-[40px] pb-[20px]">
             <div className="about-portfolio-content relative text-left">
-              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
-                A LIFE OF EASY,
-                <br /> A HOME OF JOY
+              <h2 className="2xl:text-[65px] xl:text-[45px] lg:text-[45px] md:text-[35px] text-[28px] font-bold">
+                Amayra Trillium
+                <br /> Redefining Urban Living
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px] md:pl-[40px] pl-[0px] items-center flex">
-              <p>
-                With a strong legacy of excellence, Town Bell is one of the most
-                reputed and reliable builders in the Tricity region. Backed by
-                years of experience and a proven track record, we have
-                successfully delivered a series of high-quality residential
-                projects that combine smart design, robust construction, and
-                lifestyle-driven amenities.
+            <div className="max-w-3xl text-[16px] md:pl-[40px] pl-[0px] items-center flex">
+              <p className="lg:text-[16px] md:text-[16px] text-[15px] ">
+                Amayra Trillium brings you the perfect blend of luxury, comfort,
+                and convenience—strategically located along the Kharar–Kurali
+                Highway in the fast-developing Greater Mohali region. With easy
+                access to major landmarks like Max Hospital, RayatBahra
+                University, and Chandigarh International Airport, it offers
+                unmatched connectivity while maintaining a peaceful residential
+                atmosphere.
               </p>
             </div>
           </div>
@@ -389,9 +407,10 @@ const HomePage = () => {
                 CLUBHOUSE
               </h2>
             </div>
-            <p className="p-tag">
-              Whether you're a first-time homebuyer or an investor, choosing
-              Town Bell means choosing:
+            <p className="p-tag lg:text-[16px] md:text-[16px] text-[15px] ">
+              Experience leisure and luxury at the Trillium Clubhouse—where
+              every amenity is designed for relaxation, recreation, and
+              community connection.
             </p>
           </div>
         </div>
@@ -410,19 +429,20 @@ const HomePage = () => {
         <div className="bg-white">
           <div className="flex flex-col md:flex-row justify-between item-center w-full p-[40px]">
             <div className="about-horizontal-content relative text-left">
-              <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
-                A LIFE OF EASY,
-                <br /> A HOME OF JOY
+              <h2 className="2xl:text-[65px] xl:text-[40px] lg:text-[40px] md:text-[35px] text-[30px] font-bold">
+                Where Community and
+                <br /> Comfort Come Together
               </h2>
             </div>
-            <div className="max-w-3xl text-[18px] md:pl-[40px] pl-[0px] items-center flex">
-              <p>
-                With a strong legacy of excellence, Town Bell is one of the most
-                reputed and reliable builders in the Tricity region. Backed by
-                years of experience and a proven track record, we have
-                successfully delivered a series of high-quality residential
-                projects that combine smart design, robust construction, and
-                lifestyle-driven amenities.
+            <div className="max-w-3xl text-[16px] md:pl-[40px] pl-[0px] items-center flex">
+              <p className="lg:text-[16px] md:text-[16px] text-[15px] ">
+                Designed to foster a sense of belonging, Amayra Trillium is more
+                than just a residential space—it’s a vibrant community. With a
+                host of amenities like a clubhouse, yoga lawn, kids play area,
+                and 24/7 security, it creates an environment where residents of
+                all ages can thrive. Whether you're unwinding after work or
+                connecting with neighbors, every corner is built to enhance your
+                everyday life.
               </p>
             </div>
           </div>
@@ -457,7 +477,7 @@ const HomePage = () => {
               Built on Trust. Backed <br /> by Experience.
             </h3>
             <p className="text-gray-300 text-[16px]">
-              Whether you're a first-time homebuyer or <br /> an investor,
+              Whether you're a first-time homebuyer or an investor, <br />{" "}
               choosing Town Bell means choosing:
             </p>
           </span>
@@ -476,9 +496,7 @@ const HomePage = () => {
                   <h4 className="text-white-300">{item.title}</h4>
                   {/* DASH LINE */}
                   <div className="w-10 h-[2px] bg-white my-3"></div>
-                  <p className="text-[14px] text-white-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
+                  <p className="text-[14px] text-white-300">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -490,13 +508,12 @@ const HomePage = () => {
       <section className="bg-white text-black py-[40px] px-[20px] md:px-[40px]">
         <div className="w-full flex flex-col md:flex-row gap-10">
           {/* Text */}
-          <div className="space-y-2">
-            <h2 className="2xl:text-[65px] xl:text-[55px] lg:text-[60px] md:text-[45px] text-[35px] font-bold">
-              Exterior <br /> Amayra Trillium
+          <div className="space-y-2 lg:w-[60%] w-full">
+            <h2 className="2xl:text-[65px] xl:text-[45px] lg:text-[45px] md:text-[35px] text-[30px] font-bold">
+              Exterior  <br /> Amayra Trillium
             </h2>
             <p className="text-gray-700">
-              Welcome to our world of creativity, where every project starts
-              with a dream and ends with a space that feels like home.
+              At Amayra Trillium, the exteriors blend modern design with natural beauty. From the grand entrance to landscaped open spaces, every detail is crafted to create a welcoming and elegant atmosphere—offering a perfect balance of style, space, and serenity.
             </p>
           </div>
 

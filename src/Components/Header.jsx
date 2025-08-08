@@ -33,7 +33,7 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   background: none;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   gap: 10px;
   cursor: pointer;
@@ -113,6 +113,7 @@ const Logo = styled.div`
   text-align: center;
   cursor: pointer;
   img {
+    /* padding-top: 10px; */
     width: 100px;
     height: auto;
      
