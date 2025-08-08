@@ -20,11 +20,9 @@ const Footer = () => {
             <h2 className="archivo text-[30px] mb-2 md:text-[40px] lg:text-[60px] text-white font-bold leading-[1em] text-center w-[100%] lg:w-[80%]">
               Your Trusted Real Estate Builder in Tricity
             </h2>
-            {/* <h5 className="archivo text-[16px] md:text-[20px] lg:text-[26px] text-[#ffffffcc] text-center font-semibold leading-[1.2em] md:leading-[1em] mt-[24px] mb-[51px] w-[80%] lg:w-full">
-              Got questions, project ideas, or just want to say hi? We're all ears!
-            </h5> */}
+    
               <div className="footer-bottom w-[95%] lg:w-full flex flex-wrap gap-[10px]">
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="#">
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://x.com/Townbell1" target='_blank'>
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaTwitter />
               Twitter
@@ -34,7 +32,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="#">
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.linkedin.com/company/town-bell/?viewAsMember=true" target='_blank'>
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaLinkedin />
               Linkedin
@@ -44,7 +42,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="#">
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.youtube.com/@Town-Bell" target='_blank'>
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaYoutube />
               Youtube
@@ -54,7 +52,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="#">
+          <a className="w-full md:w-[49%] lg:w-[49.5%] bg-transparent flex items-center justify-between border-[1px] border-solid border-transparent text-[12px] font-normal text-white rounded-[50px] uppercase leading-[1em]" href="https://www.instagram.com/town_bell/?hl=en" target='_blank'>
             <span className="flex items-center gap-[10px] pl-[20px] bg-[#ffffff12]">
               <FaInstagram />
               Instagram

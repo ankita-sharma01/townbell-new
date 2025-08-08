@@ -60,25 +60,25 @@ const Contact = () => {
           <div className="space-y-6">
             <h2 className="capitalize text-xl md:text-2xl font-bold mb-4">Visit us</h2>
             <div className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-black-500 mt-1" />
+              <FaMapMarkerAlt className="text-black-500 mt-1 text-xl" />
               <p className="text-[16px] font-semibold leading-6">
                 123 Studio Street, Filmmaker's Haven, Cityville, USA
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <FaClock className="text-black-500 mt-1" />
+              <FaClock className="text-black-500 mt-1 text-xl" />
               <p className="text-[16px] font-semibold leading-6">
                 Monday – Friday, 9:00 AM – 6:00 PM
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <FaEnvelope className="text-black-500 mt-1" />
+              <FaEnvelope className="text-black-500 mt-1 text-xl" />
               <p className="text-[16px] font-semibold  leading-6">
                 info@storystreamvideos.com
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <FaPhoneAlt className="text-black-500 mt-1" />
+              <FaPhoneAlt className="text-black-500 mt-1 text-xl" />
               <p className="text-[16px] font-semibold  leading-6">(123) 456-7890</p>
             </div>
           </div>
